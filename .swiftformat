@@ -1,0 +1,8 @@
+--indent 4
+--wraparguments before-first
+--self remove
+--header strip
+--maxwidth 120
+--swiftversion 5.10
+--commas inline
+--disable all
