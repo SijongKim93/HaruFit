@@ -57,9 +57,13 @@
 			children = (
 				4DC95A332D2D711E006195E4 /* .swiftlint.yml */,
 				4DC95A312D2D7117006195E4 /* .swiftformat */,
+				4DC95A272D2D6FAF006195E4 /* Assets.xcassets */,
 				4DC95A232D2D6FAE006195E4 /* HaruFitApp.swift */,
 				4DC95A252D2D6FAE006195E4 /* ContentView.swift */,
-				4DC95A272D2D6FAF006195E4 /* Assets.xcassets */,
+				4DC95A392D2D787C006195E4 /* Resource */,
+				4DC95A3A2D2D7893006195E4 /* Domain */,
+				4DC95A3C2D2D78A4006195E4 /* Data */,
+				4DC95A3D2D2D78A8006195E4 /* Presentation */,
 				4DC95A292D2D6FAF006195E4 /* Preview Content */,
 			);
 			path = HaruFit;
@@ -73,6 +77,34 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		4DC95A392D2D787C006195E4 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		4DC95A3A2D2D7893006195E4 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		4DC95A3C2D2D78A4006195E4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		4DC95A3D2D2D78A8006195E4 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,6 +115,8 @@
 				4DC95A1C2D2D6FAE006195E4 /* Sources */,
 				4DC95A1D2D2D6FAE006195E4 /* Frameworks */,
 				4DC95A1E2D2D6FAE006195E4 /* Resources */,
+				4DC95A352D2D7451006195E4 /* Swift Format */,
+				4DC95A362D2D745A006195E4 /* Swift Lint */,
 			);
 			buildRules = (
 			);
@@ -139,6 +173,47 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4DC95A352D2D7451006195E4 /* Swift Format */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Format";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftformat > /dev/null; then\n  swiftformat .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n\n\n";
+		};
+		4DC95A362D2D745A006195E4 /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\nif [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4DC95A1C2D2D6FAE006195E4 /* Sources */ = {
@@ -282,6 +357,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"HaruFit/Preview Content\"";
 				DEVELOPMENT_TEAM = U68CWSQ94X;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = HaruFit;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -317,6 +393,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"HaruFit/Preview Content\"";
 				DEVELOPMENT_TEAM = U68CWSQ94X;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = HaruFit;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

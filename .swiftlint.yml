@@ -1,0 +1,14 @@
+included:
+  - HaruFit/
+
+excluded:
+  - Pods/
+  - Carthage/
+
+disabled_rules:
+  - force_cast
+  - line_length
+  - function_body_length
+  - multiple_closures_with_trailing_closure
+  - opening_brace
+  - trailing_whitespace
