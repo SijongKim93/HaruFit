@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		035C26E22D2E0D9600BB20B8 /* PretendardVariable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 035C26E12D2E0D9600BB20B8 /* PretendardVariable.ttf */; };
+		035C26E42D2E0DF600BB20B8 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C26E32D2E0DF500BB20B8 /* Font+Extension.swift */; };
+		035C26E72D2E107600BB20B8 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C26E62D2E107600BB20B8 /* CustomButton.swift */; };
+		035C26E92D2E3E7100BB20B8 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 035C26E82D2E3E7100BB20B8 /* ColorAssets.xcassets */; };
+		035C26EE2D2E4AC800BB20B8 /* AppImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C26ED2D2E4AC800BB20B8 /* AppImages.swift */; };
+		035C26F12D2E529300BB20B8 /* RouteTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C26F02D2E529300BB20B8 /* RouteTabView.swift */; };
+		035C26F32D2E54EA00BB20B8 /* TabItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C26F22D2E54EA00BB20B8 /* TabItems.swift */; };
 		4DC95A242D2D6FAE006195E4 /* HaruFitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC95A232D2D6FAE006195E4 /* HaruFitApp.swift */; };
 		4DC95A262D2D6FAE006195E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC95A252D2D6FAE006195E4 /* ContentView.swift */; };
 		4DC95A282D2D6FAF006195E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DC95A272D2D6FAF006195E4 /* Assets.xcassets */; };
@@ -16,6 +23,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		035C26E02D2E0D1200BB20B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		035C26E12D2E0D9600BB20B8 /* PretendardVariable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PretendardVariable.ttf; sourceTree = "<group>"; };
+		035C26E32D2E0DF500BB20B8 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
+		035C26E62D2E107600BB20B8 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		035C26E82D2E3E7100BB20B8 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
+		035C26ED2D2E4AC800BB20B8 /* AppImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImages.swift; sourceTree = "<group>"; };
+		035C26F02D2E529300BB20B8 /* RouteTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTabView.swift; sourceTree = "<group>"; };
+		035C26F22D2E54EA00BB20B8 /* TabItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItems.swift; sourceTree = "<group>"; };
 		4DC95A202D2D6FAE006195E4 /* HaruFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HaruFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DC95A232D2D6FAE006195E4 /* HaruFitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaruFitApp.swift; sourceTree = "<group>"; };
 		4DC95A252D2D6FAE006195E4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -36,6 +51,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		035C26DF2D2E086C00BB20B8 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				035C26E12D2E0D9600BB20B8 /* PretendardVariable.ttf */,
+				035C26E32D2E0DF500BB20B8 /* Font+Extension.swift */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		035C26E52D2E105900BB20B8 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				035C26E62D2E107600BB20B8 /* CustomButton.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		035C26EC2D2E4AAC00BB20B8 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				035C26ED2D2E4AC800BB20B8 /* AppImages.swift */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		035C26EF2D2E527C00BB20B8 /* RouteTab */ = {
+			isa = PBXGroup;
+			children = (
+				035C26F22D2E54EA00BB20B8 /* TabItems.swift */,
+				035C26F02D2E529300BB20B8 /* RouteTabView.swift */,
+			);
+			path = RouteTab;
+			sourceTree = "<group>";
+		};
 		4DC95A172D2D6FAE006195E4 = {
 			isa = PBXGroup;
 			children = (
@@ -55,15 +104,18 @@
 		4DC95A222D2D6FAE006195E4 /* HaruFit */ = {
 			isa = PBXGroup;
 			children = (
+				035C26E02D2E0D1200BB20B8 /* Info.plist */,
 				4DC95A332D2D711E006195E4 /* .swiftlint.yml */,
 				4DC95A312D2D7117006195E4 /* .swiftformat */,
 				4DC95A272D2D6FAF006195E4 /* Assets.xcassets */,
+				035C26E82D2E3E7100BB20B8 /* ColorAssets.xcassets */,
 				4DC95A232D2D6FAE006195E4 /* HaruFitApp.swift */,
 				4DC95A252D2D6FAE006195E4 /* ContentView.swift */,
 				4DC95A392D2D787C006195E4 /* Resource */,
 				4DC95A3A2D2D7893006195E4 /* Domain */,
 				4DC95A3C2D2D78A4006195E4 /* Data */,
 				4DC95A3D2D2D78A8006195E4 /* Presentation */,
+				035C26E52D2E105900BB20B8 /* Component */,
 				4DC95A292D2D6FAF006195E4 /* Preview Content */,
 			);
 			path = HaruFit;
@@ -80,6 +132,8 @@
 		4DC95A392D2D787C006195E4 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				035C26EC2D2E4AAC00BB20B8 /* Image */,
+				035C26DF2D2E086C00BB20B8 /* Font */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -101,6 +155,7 @@
 		4DC95A3D2D2D78A8006195E4 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				035C26EF2D2E527C00BB20B8 /* RouteTab */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -165,9 +220,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				035C26E22D2E0D9600BB20B8 /* PretendardVariable.ttf in Resources */,
 				4DC95A342D2D711F006195E4 /* .swiftlint.yml in Resources */,
 				4DC95A2B2D2D6FAF006195E4 /* Preview Assets.xcassets in Resources */,
 				4DC95A282D2D6FAF006195E4 /* Assets.xcassets in Resources */,
+				035C26E92D2E3E7100BB20B8 /* ColorAssets.xcassets in Resources */,
 				4DC95A322D2D7117006195E4 /* .swiftformat in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,8 +277,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				035C26EE2D2E4AC800BB20B8 /* AppImages.swift in Sources */,
+				035C26F12D2E529300BB20B8 /* RouteTabView.swift in Sources */,
+				035C26E72D2E107600BB20B8 /* CustomButton.swift in Sources */,
 				4DC95A262D2D6FAE006195E4 /* ContentView.swift in Sources */,
+				035C26F32D2E54EA00BB20B8 /* TabItems.swift in Sources */,
 				4DC95A242D2D6FAE006195E4 /* HaruFitApp.swift in Sources */,
+				035C26E42D2E0DF600BB20B8 /* Font+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +421,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HaruFit/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = HaruFit;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -395,6 +458,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HaruFit/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = HaruFit;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
