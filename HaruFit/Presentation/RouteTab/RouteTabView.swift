@@ -45,7 +45,7 @@ struct RouteTabView: View {
                 }
             }
             .padding(.horizontal, 16)
-            .frame(height: 80)
+            .frame(height: 90)
             .background(Color.backgroundBlack)
         }
         .edgesIgnoringSafeArea(.bottom)
