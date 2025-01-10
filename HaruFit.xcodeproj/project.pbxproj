@@ -20,6 +20,9 @@
 		4D8D3A802D2EC0DC009D61AD /* WeightTrainingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3A7F2D2EC0DC009D61AD /* WeightTrainingUseCase.swift */; };
 		4D8D3A842D2EC5B2009D61AD /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3A832D2EC5B2009D61AD /* TimerViewModel.swift */; };
 		4D8D3A862D2EC5CC009D61AD /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3A852D2EC5CC009D61AD /* TimerView.swift */; };
+		4D8D3A882D31520C009D61AD /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3A872D31520C009D61AD /* Workout.swift */; };
+		4D8D3A8A2D315460009D61AD /* WorkoutRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3A892D315460009D61AD /* WorkoutRepository.swift */; };
+		4D8D3A8C2D31553A009D61AD /* WorkoutUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3A8B2D31553A009D61AD /* WorkoutUseCase.swift */; };
 		4DC95A242D2D6FAE006195E4 /* HaruFitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC95A232D2D6FAE006195E4 /* HaruFitApp.swift */; };
 		4DC95A262D2D6FAE006195E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC95A252D2D6FAE006195E4 /* ContentView.swift */; };
 		4DC95A282D2D6FAF006195E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DC95A272D2D6FAF006195E4 /* Assets.xcassets */; };
@@ -43,6 +46,9 @@
 		4D8D3A7F2D2EC0DC009D61AD /* WeightTrainingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightTrainingUseCase.swift; sourceTree = "<group>"; };
 		4D8D3A832D2EC5B2009D61AD /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		4D8D3A852D2EC5CC009D61AD /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		4D8D3A872D31520C009D61AD /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		4D8D3A892D315460009D61AD /* WorkoutRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutRepository.swift; sourceTree = "<group>"; };
+		4D8D3A8B2D31553A009D61AD /* WorkoutUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutUseCase.swift; sourceTree = "<group>"; };
 		4DC95A202D2D6FAE006195E4 /* HaruFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HaruFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DC95A232D2D6FAE006195E4 /* HaruFitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaruFitApp.swift; sourceTree = "<group>"; };
 		4DC95A252D2D6FAE006195E4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				4D8D3A7B2D2EBDF9009D61AD /* WeightTraining.swift */,
+				4D8D3A872D31520C009D61AD /* Workout.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -109,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				4D8D3A7F2D2EC0DC009D61AD /* WeightTrainingUseCase.swift */,
+				4D8D3A8B2D31553A009D61AD /* WorkoutUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -189,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				4D8D3A7D2D2EBE78009D61AD /* WeightTrainningRepository.swift */,
+				4D8D3A892D315460009D61AD /* WorkoutRepository.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -323,13 +332,16 @@
 				035C26EE2D2E4AC800BB20B8 /* AppImages.swift in Sources */,
 				4D8D3A802D2EC0DC009D61AD /* WeightTrainingUseCase.swift in Sources */,
 				035C26F12D2E529300BB20B8 /* RouteTabView.swift in Sources */,
+				4D8D3A882D31520C009D61AD /* Workout.swift in Sources */,
 				035C26E72D2E107600BB20B8 /* CustomButton.swift in Sources */,
+				4D8D3A8C2D31553A009D61AD /* WorkoutUseCase.swift in Sources */,
 				4D8D3A7C2D2EBDF9009D61AD /* WeightTraining.swift in Sources */,
 				4DC95A262D2D6FAE006195E4 /* ContentView.swift in Sources */,
 				4D8D3A862D2EC5CC009D61AD /* TimerView.swift in Sources */,
 				4D8D3A7E2D2EBE78009D61AD /* WeightTrainningRepository.swift in Sources */,
 				035C26F32D2E54EA00BB20B8 /* TabItems.swift in Sources */,
 				4D8D3A842D2EC5B2009D61AD /* TimerViewModel.swift in Sources */,
+				4D8D3A8A2D315460009D61AD /* WorkoutRepository.swift in Sources */,
 				4DC95A242D2D6FAE006195E4 /* HaruFitApp.swift in Sources */,
 				035C26E42D2E0DF600BB20B8 /* Font+Extension.swift in Sources */,
 			);
