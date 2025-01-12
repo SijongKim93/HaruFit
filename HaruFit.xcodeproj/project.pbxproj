@@ -23,6 +23,13 @@
 		4D8D3A882D31520C009D61AD /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3A872D31520C009D61AD /* Workout.swift */; };
 		4D8D3A8A2D315460009D61AD /* WorkoutRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3A892D315460009D61AD /* WorkoutRepository.swift */; };
 		4D8D3A8C2D31553A009D61AD /* WorkoutUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3A8B2D31553A009D61AD /* WorkoutUseCase.swift */; };
+		4D8D3A8F2D33A1AE009D61AD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4D8D3A8E2D33A1AE009D61AD /* Alamofire */; };
+		4D8D3A922D33A220009D61AD /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 4D8D3A912D33A220009D61AD /* FirebaseAuth */; };
+		4D8D3A942D33A220009D61AD /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 4D8D3A932D33A220009D61AD /* FirebaseCore */; };
+		4D8D3A962D33A220009D61AD /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 4D8D3A952D33A220009D61AD /* FirebaseDatabase */; };
+		4D8D3A982D33A220009D61AD /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 4D8D3A972D33A220009D61AD /* FirebaseFirestore */; };
+		4D8D3A9A2D33A220009D61AD /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 4D8D3A992D33A220009D61AD /* FirebaseMessaging */; };
+		4D8D3A9C2D33A220009D61AD /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 4D8D3A9B2D33A220009D61AD /* FirebaseStorage */; };
 		4DC95A242D2D6FAE006195E4 /* HaruFitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC95A232D2D6FAE006195E4 /* HaruFitApp.swift */; };
 		4DC95A262D2D6FAE006195E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC95A252D2D6FAE006195E4 /* ContentView.swift */; };
 		4DC95A282D2D6FAF006195E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DC95A272D2D6FAF006195E4 /* Assets.xcassets */; };
@@ -63,6 +70,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D8D3A9A2D33A220009D61AD /* FirebaseMessaging in Frameworks */,
+				4D8D3A8F2D33A1AE009D61AD /* Alamofire in Frameworks */,
+				4D8D3A942D33A220009D61AD /* FirebaseCore in Frameworks */,
+				4D8D3A962D33A220009D61AD /* FirebaseDatabase in Frameworks */,
+				4D8D3A9C2D33A220009D61AD /* FirebaseStorage in Frameworks */,
+				4D8D3A982D33A220009D61AD /* FirebaseFirestore in Frameworks */,
+				4D8D3A922D33A220009D61AD /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +243,15 @@
 			dependencies = (
 			);
 			name = HaruFit;
+			packageProductDependencies = (
+				4D8D3A8E2D33A1AE009D61AD /* Alamofire */,
+				4D8D3A912D33A220009D61AD /* FirebaseAuth */,
+				4D8D3A932D33A220009D61AD /* FirebaseCore */,
+				4D8D3A952D33A220009D61AD /* FirebaseDatabase */,
+				4D8D3A972D33A220009D61AD /* FirebaseFirestore */,
+				4D8D3A992D33A220009D61AD /* FirebaseMessaging */,
+				4D8D3A9B2D33A220009D61AD /* FirebaseStorage */,
+			);
 			productName = HaruFit;
 			productReference = 4DC95A202D2D6FAE006195E4 /* HaruFit.app */;
 			productType = "com.apple.product-type.application";
@@ -257,6 +280,10 @@
 				Base,
 			);
 			mainGroup = 4DC95A172D2D6FAE006195E4;
+			packageReferences = (
+				4D8D3A8D2D33A1AE009D61AD /* XCRemoteSwiftPackageReference "Alamofire" */,
+				4D8D3A902D33A220009D61AD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 4DC95A212D2D6FAE006195E4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -565,6 +592,63 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4D8D3A8D2D33A1AE009D61AD /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+		4D8D3A902D33A220009D61AD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4D8D3A8E2D33A1AE009D61AD /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D8D3A8D2D33A1AE009D61AD /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		4D8D3A912D33A220009D61AD /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D8D3A902D33A220009D61AD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		4D8D3A932D33A220009D61AD /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D8D3A902D33A220009D61AD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		4D8D3A952D33A220009D61AD /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D8D3A902D33A220009D61AD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		4D8D3A972D33A220009D61AD /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D8D3A902D33A220009D61AD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		4D8D3A992D33A220009D61AD /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D8D3A902D33A220009D61AD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		4D8D3A9B2D33A220009D61AD /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D8D3A902D33A220009D61AD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4DC95A182D2D6FAE006195E4 /* Project object */;
 }
