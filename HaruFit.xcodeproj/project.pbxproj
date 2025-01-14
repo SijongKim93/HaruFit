@@ -15,9 +15,6 @@
 		035C26F12D2E529300BB20B8 /* RouteTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C26F02D2E529300BB20B8 /* RouteTabView.swift */; };
 		035C26F32D2E54EA00BB20B8 /* TabItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C26F22D2E54EA00BB20B8 /* TabItems.swift */; };
 		035C26F52D2E5ED800BB20B8 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 035C26F42D2E5ED800BB20B8 /* .gitignore */; };
-		4D8D3A7C2D2EBDF9009D61AD /* WeightTraining.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3A7B2D2EBDF9009D61AD /* WeightTraining.swift */; };
-		4D8D3A7E2D2EBE78009D61AD /* WeightTrainningRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3A7D2D2EBE78009D61AD /* WeightTrainningRepository.swift */; };
-		4D8D3A802D2EC0DC009D61AD /* WeightTrainingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3A7F2D2EC0DC009D61AD /* WeightTrainingUseCase.swift */; };
 		4D8D3A842D2EC5B2009D61AD /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3A832D2EC5B2009D61AD /* TimerViewModel.swift */; };
 		4D8D3A862D2EC5CC009D61AD /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3A852D2EC5CC009D61AD /* TimerView.swift */; };
 		4D8D3A882D31520C009D61AD /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3A872D31520C009D61AD /* Workout.swift */; };
@@ -48,9 +45,6 @@
 		035C26F02D2E529300BB20B8 /* RouteTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTabView.swift; sourceTree = "<group>"; };
 		035C26F22D2E54EA00BB20B8 /* TabItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItems.swift; sourceTree = "<group>"; };
 		035C26F42D2E5ED800BB20B8 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
-		4D8D3A7B2D2EBDF9009D61AD /* WeightTraining.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightTraining.swift; sourceTree = "<group>"; };
-		4D8D3A7D2D2EBE78009D61AD /* WeightTrainningRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightTrainningRepository.swift; sourceTree = "<group>"; };
-		4D8D3A7F2D2EC0DC009D61AD /* WeightTrainingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightTrainingUseCase.swift; sourceTree = "<group>"; };
 		4D8D3A832D2EC5B2009D61AD /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		4D8D3A852D2EC5CC009D61AD /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		4D8D3A872D31520C009D61AD /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
@@ -120,7 +114,6 @@
 		4D8D3A792D2EBD86009D61AD /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				4D8D3A7B2D2EBDF9009D61AD /* WeightTraining.swift */,
 				4D8D3A872D31520C009D61AD /* Workout.swift */,
 			);
 			path = Entity;
@@ -129,7 +122,6 @@
 		4D8D3A7A2D2EBD8F009D61AD /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
-				4D8D3A7F2D2EC0DC009D61AD /* WeightTrainingUseCase.swift */,
 				4D8D3A8B2D31553A009D61AD /* WorkoutUseCase.swift */,
 			);
 			path = UseCase;
@@ -210,7 +202,6 @@
 		4DC95A3C2D2D78A4006195E4 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				4D8D3A7D2D2EBE78009D61AD /* WeightTrainningRepository.swift */,
 				4D8D3A892D315460009D61AD /* WorkoutRepository.swift */,
 			);
 			path = Data;
@@ -357,15 +348,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				035C26EE2D2E4AC800BB20B8 /* AppImages.swift in Sources */,
-				4D8D3A802D2EC0DC009D61AD /* WeightTrainingUseCase.swift in Sources */,
 				035C26F12D2E529300BB20B8 /* RouteTabView.swift in Sources */,
 				4D8D3A882D31520C009D61AD /* Workout.swift in Sources */,
 				035C26E72D2E107600BB20B8 /* CustomButton.swift in Sources */,
 				4D8D3A8C2D31553A009D61AD /* WorkoutUseCase.swift in Sources */,
-				4D8D3A7C2D2EBDF9009D61AD /* WeightTraining.swift in Sources */,
 				4DC95A262D2D6FAE006195E4 /* ContentView.swift in Sources */,
 				4D8D3A862D2EC5CC009D61AD /* TimerView.swift in Sources */,
-				4D8D3A7E2D2EBE78009D61AD /* WeightTrainningRepository.swift in Sources */,
 				035C26F32D2E54EA00BB20B8 /* TabItems.swift in Sources */,
 				4D8D3A842D2EC5B2009D61AD /* TimerViewModel.swift in Sources */,
 				4D8D3A8A2D315460009D61AD /* WorkoutRepository.swift in Sources */,
