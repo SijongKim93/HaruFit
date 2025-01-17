@@ -16,7 +16,7 @@ struct RouteTabView: View {
             case .workout:
                 ContentView()
             case .time:
-                ContentView()
+                TimerView()
             case .collect:
                 ContentView()
             case .record:
@@ -46,8 +46,8 @@ struct RouteTabView: View {
             }
             .padding(.horizontal, 16)
             .frame(height: 90)
-            .background(Color.backgroundBlack)
         }
+        .background(Color.backgroundBlack)
         .edgesIgnoringSafeArea(.bottom)
     }
 }

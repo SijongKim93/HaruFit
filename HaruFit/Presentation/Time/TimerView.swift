@@ -12,40 +12,47 @@ struct TimerView: View {
     @State private var showWorkoutDetail = false
 
     var body: some View {
-        VStack(spacing: 40) {
+        ZStack {
+            Color.backgroundBlack
+                .ignoresSafeArea()
             
-
-            Text("운동을 선택하세요.")
-                .h1()
-
-            Button("웨이트 트레이닝") {
-                selectedWorkout = .weightTraining
-                showWorkoutDetail = true
-            }
-            .buttonStyle(.borderedProminent)
-
-            Button("런닝") {
-                selectedWorkout = .running
-                showWorkoutDetail = true
-            }
-            .buttonStyle(.borderedProminent)
-
-            Button("타바타") {
-                selectedWorkout = .tabata
-                showWorkoutDetail = true
-            }
-            .buttonStyle(.borderedProminent)
-        }
-        .padding()
-        .fullScreenCover(isPresented: $showWorkoutDetail, content: {
-            if let workout = selectedWorkout {
-                TimerDetailView(workout: workout) {
-                    showWorkoutDetail = false
+            VStack(spacing: 40) {
+                
+                Text("운동을 선택하세요.")
+                    .h1()
+                    .foregroundColor(.labelAlternative)
+                
+                Button("웨이트 트레이닝") {
+                    selectedWorkout = .weightTraining
+                    showWorkoutDetail = true
                 }
+                .buttonStyle(.borderedProminent)
+                
+                Button("런닝") {
+                    selectedWorkout = .running
+                    showWorkoutDetail = true
+                }
+                .buttonStyle(.borderedProminent)
+                
+                Button("타바타") {
+                    selectedWorkout = .tabata
+                    showWorkoutDetail = true
+                }
+                .buttonStyle(.borderedProminent)
             }
-        })
+            .padding()
+            .fullScreenCover(isPresented: $showWorkoutDetail, content: {
+                if let workout = selectedWorkout {
+                    TimerDetailView(workout: workout) {
+                        showWorkoutDetail = false
+                    }
+                }
+            })
+            
+        }
     }
 }
+
 
 #Preview {
     TimerView()
