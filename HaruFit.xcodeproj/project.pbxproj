@@ -28,6 +28,7 @@
 		4D8D3A982D33A220009D61AD /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 4D8D3A972D33A220009D61AD /* FirebaseFirestore */; };
 		4D8D3A9A2D33A220009D61AD /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 4D8D3A992D33A220009D61AD /* FirebaseMessaging */; };
 		4D8D3A9C2D33A220009D61AD /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 4D8D3A9B2D33A220009D61AD /* FirebaseStorage */; };
+		4D8D3A9E2D3BE132009D61AD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3A9D2D3BE132009D61AD /* User.swift */; };
 		4DC95A242D2D6FAE006195E4 /* HaruFitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC95A232D2D6FAE006195E4 /* HaruFitApp.swift */; };
 		4DC95A262D2D6FAE006195E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC95A252D2D6FAE006195E4 /* ContentView.swift */; };
 		4DC95A282D2D6FAF006195E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DC95A272D2D6FAF006195E4 /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 		4D8D3A872D31520C009D61AD /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		4D8D3A892D315460009D61AD /* WorkoutRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutRepository.swift; sourceTree = "<group>"; };
 		4D8D3A8B2D31553A009D61AD /* WorkoutUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutUseCase.swift; sourceTree = "<group>"; };
+		4D8D3A9D2D3BE132009D61AD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4DC95A202D2D6FAE006195E4 /* HaruFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HaruFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DC95A232D2D6FAE006195E4 /* HaruFitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaruFitApp.swift; sourceTree = "<group>"; };
 		4DC95A252D2D6FAE006195E4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				4D8D3A872D31520C009D61AD /* Workout.swift */,
+				4D8D3A9D2D3BE132009D61AD /* User.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				035C26E72D2E107600BB20B8 /* CustomButton.swift in Sources */,
 				4D8D3A8C2D31553A009D61AD /* WorkoutUseCase.swift in Sources */,
 				03FC07432D37A3A400EBF374 /* TimerDetailView.swift in Sources */,
+				4D8D3A9E2D3BE132009D61AD /* User.swift in Sources */,
 				4DC95A262D2D6FAE006195E4 /* ContentView.swift in Sources */,
 				4D8D3A862D2EC5CC009D61AD /* TimerView.swift in Sources */,
 				035C26F32D2E54EA00BB20B8 /* TabItems.swift in Sources */,
