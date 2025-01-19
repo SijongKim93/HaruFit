@@ -29,6 +29,10 @@
 		4D8D3A9A2D33A220009D61AD /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 4D8D3A992D33A220009D61AD /* FirebaseMessaging */; };
 		4D8D3A9C2D33A220009D61AD /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 4D8D3A9B2D33A220009D61AD /* FirebaseStorage */; };
 		4D8D3A9E2D3BE132009D61AD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3A9D2D3BE132009D61AD /* User.swift */; };
+		4D8D3AA12D3CD7F1009D61AD /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 4D8D3AA02D3CD7F1009D61AD /* KakaoSDK */; };
+		4D8D3AA32D3CD7F1009D61AD /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 4D8D3AA22D3CD7F1009D61AD /* KakaoSDKAuth */; };
+		4D8D3AA62D3CD806009D61AD /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 4D8D3AA52D3CD806009D61AD /* GoogleSignIn */; };
+		4D8D3AA82D3CD806009D61AD /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4D8D3AA72D3CD806009D61AD /* GoogleSignInSwift */; };
 		4DC95A242D2D6FAE006195E4 /* HaruFitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC95A232D2D6FAE006195E4 /* HaruFitApp.swift */; };
 		4DC95A262D2D6FAE006195E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC95A252D2D6FAE006195E4 /* ContentView.swift */; };
 		4DC95A282D2D6FAF006195E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DC95A272D2D6FAF006195E4 /* Assets.xcassets */; };
@@ -69,12 +73,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D8D3A9A2D33A220009D61AD /* FirebaseMessaging in Frameworks */,
+				4D8D3AA12D3CD7F1009D61AD /* KakaoSDK in Frameworks */,
 				4D8D3A8F2D33A1AE009D61AD /* Alamofire in Frameworks */,
 				4D8D3A942D33A220009D61AD /* FirebaseCore in Frameworks */,
 				4D8D3A962D33A220009D61AD /* FirebaseDatabase in Frameworks */,
+				4D8D3AA62D3CD806009D61AD /* GoogleSignIn in Frameworks */,
 				4D8D3A9C2D33A220009D61AD /* FirebaseStorage in Frameworks */,
 				4D8D3A982D33A220009D61AD /* FirebaseFirestore in Frameworks */,
 				4D8D3A922D33A220009D61AD /* FirebaseAuth in Frameworks */,
+				4D8D3AA32D3CD7F1009D61AD /* KakaoSDKAuth in Frameworks */,
+				4D8D3AA82D3CD806009D61AD /* GoogleSignInSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +256,10 @@
 				4D8D3A972D33A220009D61AD /* FirebaseFirestore */,
 				4D8D3A992D33A220009D61AD /* FirebaseMessaging */,
 				4D8D3A9B2D33A220009D61AD /* FirebaseStorage */,
+				4D8D3AA02D3CD7F1009D61AD /* KakaoSDK */,
+				4D8D3AA22D3CD7F1009D61AD /* KakaoSDKAuth */,
+				4D8D3AA52D3CD806009D61AD /* GoogleSignIn */,
+				4D8D3AA72D3CD806009D61AD /* GoogleSignInSwift */,
 			);
 			productName = HaruFit;
 			productReference = 4DC95A202D2D6FAE006195E4 /* HaruFit.app */;
@@ -280,6 +292,8 @@
 			packageReferences = (
 				4D8D3A8D2D33A1AE009D61AD /* XCRemoteSwiftPackageReference "Alamofire" */,
 				4D8D3A902D33A220009D61AD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				4D8D3A9F2D3CD7F1009D61AD /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
+				4D8D3AA42D3CD806009D61AD /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			productRefGroup = 4DC95A212D2D6FAE006195E4 /* Products */;
 			projectDirPath = "";
@@ -606,6 +620,22 @@
 				minimumVersion = 11.6.0;
 			};
 		};
+		4D8D3A9F2D3CD7F1009D61AD /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kakao/kakao-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.23.0;
+			};
+		};
+		4D8D3AA42D3CD806009D61AD /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -643,6 +673,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4D8D3A902D33A220009D61AD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		4D8D3AA02D3CD7F1009D61AD /* KakaoSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D8D3A9F2D3CD7F1009D61AD /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDK;
+		};
+		4D8D3AA22D3CD7F1009D61AD /* KakaoSDKAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D8D3A9F2D3CD7F1009D61AD /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKAuth;
+		};
+		4D8D3AA52D3CD806009D61AD /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D8D3AA42D3CD806009D61AD /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		4D8D3AA72D3CD806009D61AD /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D8D3AA42D3CD806009D61AD /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
