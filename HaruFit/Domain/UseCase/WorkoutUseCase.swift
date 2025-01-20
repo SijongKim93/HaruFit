@@ -34,8 +34,11 @@ final class DefaultWorkoutUseCase: WorkoutUseCase {
         case .running:
             startRunning(setting)
         case .tabata:
+            startRunning(setting)
+        case .yoga:
             break
         }
+        
     }
     
     func stopWorkout() {

@@ -52,6 +52,8 @@ struct TimerDetailView: View {
                 runningUI
             case .tabata:
                 tabataUI
+            case .yoga:
+                tabataUI
             }
 
             HStack(spacing: 40) {
@@ -102,6 +104,8 @@ struct TimerDetailView: View {
         case .weightTraining: return "웨이트 트레이닝"
         case .running:        return "런닝"
         case .tabata:         return "타바타"
+        case .yoga:
+            return "요가"
         }
     }
 }
