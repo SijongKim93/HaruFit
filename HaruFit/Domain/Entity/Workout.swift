@@ -11,6 +11,7 @@ public enum Workout {
     case weightTraining
     case running
     case tabata
+    case yoga
 }
 
 public struct WorkoutSetting {

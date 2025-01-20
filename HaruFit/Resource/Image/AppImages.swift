@@ -18,4 +18,9 @@ enum AppImages {
         static let collectoff = "collect"
         static let collecton = "collect.fill"
     }
+    
+    enum WorkoutImage {
+        static let running = "running"
+        static let weightTraining = "dumbell"
+    }
 }
