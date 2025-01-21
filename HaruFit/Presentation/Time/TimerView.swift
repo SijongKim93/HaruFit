@@ -73,9 +73,9 @@ struct TimerView: View {
             case .running:
                 return AppImages.WorkoutImage.running
             case .tabata:
-                return AppImages.WorkoutImage.running
+                return AppImages.WorkoutImage.tabata
             case .yoga:
-                return AppImages.WorkoutImage.weightTraining
+                return AppImages.WorkoutImage.yoga
             }
         }()
         
