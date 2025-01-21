@@ -22,5 +22,7 @@ enum AppImages {
     enum WorkoutImage {
         static let running = "running"
         static let weightTraining = "dumbell"
+        static let tabata = "tabata"
+        static let yoga = "yoga"
     }
 }
