@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TimerView: View {
+struct WorksoutView: View {
     @State private var selectedWorkout: Workout? = nil
     @State private var showWorkoutDetail = false
     
@@ -113,5 +113,5 @@ struct ShrinkOnPressButtonStyle: ButtonStyle {
 }
 
 #Preview {
-    TimerView()
+    WorksoutView()
 }

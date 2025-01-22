@@ -14,9 +14,7 @@ struct RouteTabView: View {
         VStack {
             switch selectedTab {
             case .workout:
-                ContentView()
-            case .time:
-                TimerView()
+                WorksoutView()
             case .collect:
                 ContentView()
             case .record:
