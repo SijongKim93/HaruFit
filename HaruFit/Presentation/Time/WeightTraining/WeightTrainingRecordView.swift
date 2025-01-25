@@ -41,13 +41,18 @@ struct WeightTrainingRecordView: View {
                             RoundedRectangle(cornerRadius: 12)
                                 .stroke(style: StrokeStyle(lineWidth: 2, lineCap: .round, dash: [10, 5]))
                                 .frame(height: 150)
-                                .padding(.top, 50)
-                            
+                                                            
                             Image(systemName: "plus.circle")
-                            
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 30,height: 30)
                         }
                         .foregroundColor(.accent)
-                    })
+                    }
+                )
+                .padding(.top, 50)
+                
+                Spacer()
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding()

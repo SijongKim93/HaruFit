@@ -80,6 +80,7 @@ struct TimerDetailView: View {
         VStack(spacing: 16) {
             Stepper("휴식 시간(초): \(viewModel.restTime)", value: $viewModel.restTime, in: 0...300)
             Stepper("총 세트 수: \(viewModel.totalSets)", value: $viewModel.totalSets, in: 1...20)
+
             Text("현재 세트: \(viewModel.currentSets)")
         }
     }
