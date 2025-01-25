@@ -22,6 +22,10 @@ struct WorksoutView: View {
                 .ignoresSafeArea()
             
             VStack(alignment: .leading) {
+                HeaderView(profileImage: Image(systemName: "person.circle.fill"), nickname: "Shwan Kim", onSettingsTapped:
+                            
+                )
+                
                 Text("운동을 선택하세요.")
                     .h1()
                     .foregroundColor(.labelAlternative)

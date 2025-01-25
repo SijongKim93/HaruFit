@@ -11,6 +11,8 @@ struct UserSession: Equatable {
     let userId: String
     let nickname: String?
     let proflieImageData: Data?
+    let gender: String?
+    let age: Int?
     
     let isLoggedIn: Bool
 }

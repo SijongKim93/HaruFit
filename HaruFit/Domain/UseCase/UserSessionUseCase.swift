@@ -8,7 +8,12 @@
 import Foundation
 
 protocol UserSessionUseCase {
-    func login(userId: String, nickname: String?, proflileImageData: Data?) -> UserSession
+    func login(
+        userId: String,
+        gender: String?,
+        age: Int?,
+        nickname: String?,
+        profileImageData: Data?) -> UserSession
     func logout()
     func currentSession() -> UserSession?
 }
@@ -20,11 +25,19 @@ class DefaultUserSessionUseCase: UserSessionUseCase {
         self.repository = repository
     }
     
-    func login(userId: String, nickname: String?, proflileImageData: Data?) -> UserSession {
+    func login(
+        userId: String,
+        gender: String?,
+        age: Int?,
+        nickname: String?,
+        profileImageData: Data?) -> UserSession 
+    {
         let newSession = UserSession(
             userId: userId,
             nickname: nickname,
-            proflieImageData: proflileImageData,
+            proflieImageData: profileImageData,
+            gender: gender,
+            age: age,
             isLoggedIn: true
         )
         repository.save(session: newSession)

@@ -36,6 +36,7 @@
 		4D8D3AB72D428E36009D61AD /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3AB62D428E36009D61AD /* UserSession.swift */; };
 		4D8D3AB92D428EBC009D61AD /* UserSessionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3AB82D428EBC009D61AD /* UserSessionUseCase.swift */; };
 		4D8D3ABB2D428FED009D61AD /* UserSessionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3ABA2D428FED009D61AD /* UserSessionRepository.swift */; };
+		4D8D3ABD2D451D7C009D61AD /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3ABC2D451D7C009D61AD /* HeaderView.swift */; };
 		4DC95A242D2D6FAE006195E4 /* HaruFitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC95A232D2D6FAE006195E4 /* HaruFitApp.swift */; };
 		4DC95A262D2D6FAE006195E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC95A252D2D6FAE006195E4 /* ContentView.swift */; };
 		4DC95A282D2D6FAF006195E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DC95A272D2D6FAF006195E4 /* Assets.xcassets */; };
@@ -68,6 +69,7 @@
 		4D8D3AB62D428E36009D61AD /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		4D8D3AB82D428EBC009D61AD /* UserSessionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionUseCase.swift; sourceTree = "<group>"; };
 		4D8D3ABA2D428FED009D61AD /* UserSessionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionRepository.swift; sourceTree = "<group>"; };
+		4D8D3ABC2D451D7C009D61AD /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		4DC95A202D2D6FAE006195E4 /* HaruFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HaruFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DC95A232D2D6FAE006195E4 /* HaruFitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaruFitApp.swift; sourceTree = "<group>"; };
 		4DC95A252D2D6FAE006195E4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				035C26E62D2E107600BB20B8 /* CustomButton.swift */,
+				4D8D3ABC2D451D7C009D61AD /* HeaderView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				4D8D3A882D31520C009D61AD /* Workout.swift in Sources */,
 				4D8D3AAB2D3FDACD009D61AD /* WeightTrainingViewModel.swift in Sources */,
 				035C26E72D2E107600BB20B8 /* CustomButton.swift in Sources */,
+				4D8D3ABD2D451D7C009D61AD /* HeaderView.swift in Sources */,
 				4D8D3ABB2D428FED009D61AD /* UserSessionRepository.swift in Sources */,
 				4D8D3A8C2D31553A009D61AD /* WorkoutUseCase.swift in Sources */,
 				03FC07432D37A3A400EBF374 /* TimerDetailView.swift in Sources */,
