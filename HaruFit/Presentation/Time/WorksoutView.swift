@@ -21,16 +21,22 @@ struct WorksoutView: View {
             Color.backgroundBlack
                 .ignoresSafeArea()
             
-            VStack(alignment: .leading) {
-                HeaderView(profileImage: Image(systemName: "person.circle.fill"), nickname: "Shwan Kim", onSettingsTapped:
-                            
-                )
+            VStack(alignment: .leading, spacing: 0) {
                 
-                Text("운동을 선택하세요.")
-                    .h1()
-                    .foregroundColor(.labelAlternative)
+                HeaderView()
                 
-                Spacer()
+                VStack(alignment: .leading, spacing: 0) {
+                    Text("운동을 선택하세요.")
+                        .h1()
+                        .foregroundColor(.interactionDisable)
+                    
+                    Text("선택하는 운동에 따라 다른 세션이 진행됩니다.")
+                        .b1()
+                        .foregroundColor(.interactionInactive)
+                }
+                .padding(.horizontal, 16)
+                .padding(.vertical, 40)
+                
                 
                 LazyVGrid(columns: columns, spacing: 10) {
                     workoutButton(
@@ -56,7 +62,7 @@ struct WorksoutView: View {
                 
                 Spacer()
             }
-            .padding()
+            .padding(.horizontal, 16)
             .fullScreenCover(isPresented: $showWorkoutDetail, content: {
                 if let workout = selectedWorkout {
                     TimerDetailView(workout: workout) {

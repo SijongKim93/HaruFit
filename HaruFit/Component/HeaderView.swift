@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct HeaderView: View {
-    let profileImage: Image
-    let nickname: String
+    @AppStorage("userId") private var storedUserId: String?
+    @AppStorage("nickname") private var storedNickname: String?
+    @AppStorage("profileImageBase64") private var storedProfileImageBase64: String?
     
-    let onSettingsTapped: () -> Void
+    //let onSettingsTapped: () -> Void
     
     var body: some View {
         ZStack {
@@ -26,18 +27,24 @@ struct HeaderView: View {
                     .clipShape(Circle())
                 
                 VStack(alignment: .leading, spacing: 5) {
-                    Text("어서오세요")
-                        .b4()
-                        .foregroundColor(.interactionInactive)
-                    Text(nickname)
-                        .b2()
-                        .foregroundColor(.interactionDisable)
+                    if let nickname = storedNickname {
+                        Text("어서오세요")
+                            .b4()
+                            .foregroundColor(.interactionInactive)
+                        Text(nickname)
+                            .b2()
+                            .foregroundColor(.interactionDisable)
+                    } else {
+                        Text("로그인이 필요합니다.")
+                            .b2()
+                            .foregroundColor(.interactionInactive)
+                    }
                 }
                 
                 Spacer()
                 
                 Button(action: {
-                    onSettingsTapped()
+                    //onSettingsTapped()
                 }, label: {
                     Image(systemName: "gearshape.fill")
                         .resizable()
@@ -45,23 +52,25 @@ struct HeaderView: View {
                         .frame(width: 24, height: 24)
                         .foregroundColor(.interactionInactive)
                 })
+                .opacity(storedUserId == nil ? 0 : 1)
             }
             .padding(.horizontal)
-            .padding(.top, 40)
-            .padding(.bottom, 12)
+            .padding(.top, 0)
         }
-        .frame(height: 100)
+        .frame(height: 60)
+    }
+    
+    private var profileImage: Image {
+        if let base64String = storedProfileImageBase64,
+           let data = Data(base64Encoded: base64String),
+           let uiImage = UIImage(data: data) {
+            return Image(uiImage: uiImage)
+        } else {
+            return Image(systemName: "person.circle.fill")
+        }
     }
 }
 
-struct HeaderView_Previews: PreviewProvider {
-    static var previews: some View {
-        HeaderView(
-            profileImage: Image(systemName: "person.circle.fill"),
-            nickname: "ShawnKim"
-        ) {
-            print("Settings tapped!")
-        }
-        .previewLayout(.sizeThatFits)
-    }
+#Preview {
+    HeaderView()
 }
