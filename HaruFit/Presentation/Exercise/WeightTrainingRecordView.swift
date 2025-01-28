@@ -28,8 +28,13 @@ struct WeightTrainingRecordView: View {
             
             VStack {
                 HeaderText()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.vertical, 30)
+                ExerciseListView(viewModel: viewModel)
+                Spacer()
                 
             }
+            .padding()
         }
     }
 }
@@ -45,4 +50,8 @@ struct HeaderText: View {
                 .foregroundColor(.interactionInactive)
         }
     }
+}
+
+#Preview {
+    WeightTrainingRecordView(bodyPart: .chest)
 }
