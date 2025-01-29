@@ -44,7 +44,7 @@ struct HeaderView: View {
                 Spacer()
                 
                 Button(action: {
-                    //onSettingsTapped()
+                    
                 }, label: {
                     Image(systemName: "gearshape.fill")
                         .resizable()

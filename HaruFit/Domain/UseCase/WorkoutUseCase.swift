@@ -95,23 +95,4 @@ final class DefaultWorkoutUseCase: WorkoutUseCase {
             }
         }
     }
-    
-    private func startRunning(_ setting: WorkoutSetting) {
-        timer?.invalidate()
-        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
-            guard let self = self,
-                  var current = self.currentSetting else { return }
-            
-            let newRunningTime = current.runningTime + 1
-            current = WorkoutSetting(
-                workoutType: .running,
-                restTime: current.restTime,
-                totalSets: current.totalSets,
-                currentSets: current.currentSets,
-                distance: current.distance,
-                runningTime: newRunningTime
-            )
-            self.currentSetting = current
-        }
-    }
 }
