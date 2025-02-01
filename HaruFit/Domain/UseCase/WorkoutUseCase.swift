@@ -32,9 +32,9 @@ final class DefaultWorkoutUseCase: WorkoutUseCase {
         case .weightTraining:
             startWeightTraining(setting)
         case .running:
-            startRunning(setting)
+            startWeightTraining(setting)
         case .tabata:
-            startRunning(setting)
+            startWeightTraining(setting)
         case .yoga:
             break
         }
