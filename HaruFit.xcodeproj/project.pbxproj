@@ -16,6 +16,9 @@
 		035C26F32D2E54EA00BB20B8 /* TabItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C26F22D2E54EA00BB20B8 /* TabItems.swift */; };
 		035C26F52D2E5ED800BB20B8 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 035C26F42D2E5ED800BB20B8 /* .gitignore */; };
 		03FC07432D37A3A400EBF374 /* TimerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FC07422D37A3A400EBF374 /* TimerDetailView.swift */; };
+		03FC07992D51F8A300EBF374 /* Appfile in Resources */ = {isa = PBXBuildFile; fileRef = 03FC07962D51F8A300EBF374 /* Appfile */; };
+		03FC079A2D51F8A300EBF374 /* Fastfile in Resources */ = {isa = PBXBuildFile; fileRef = 03FC07972D51F8A300EBF374 /* Fastfile */; };
+		03FC079F2D51FE0B00EBF374 /* Matchfile in Resources */ = {isa = PBXBuildFile; fileRef = 03FC079E2D51FE0B00EBF374 /* Matchfile */; };
 		4D8D3A842D2EC5B2009D61AD /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3A832D2EC5B2009D61AD /* TimerViewModel.swift */; };
 		4D8D3A862D2EC5CC009D61AD /* WorksoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3A852D2EC5CC009D61AD /* WorksoutView.swift */; };
 		4D8D3A882D31520C009D61AD /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3A872D31520C009D61AD /* Workout.swift */; };
@@ -59,6 +62,11 @@
 		035C26F22D2E54EA00BB20B8 /* TabItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItems.swift; sourceTree = "<group>"; };
 		035C26F42D2E5ED800BB20B8 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		03FC07422D37A3A400EBF374 /* TimerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDetailView.swift; sourceTree = "<group>"; };
+		03FC07962D51F8A300EBF374 /* Appfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Appfile; sourceTree = "<group>"; };
+		03FC07972D51F8A300EBF374 /* Fastfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Fastfile; sourceTree = "<group>"; };
+		03FC079C2D51F8CA00EBF374 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		03FC079D2D51F8D100EBF374 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		03FC079E2D51FE0B00EBF374 /* Matchfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Matchfile; sourceTree = "<group>"; };
 		4D8D3A832D2EC5B2009D61AD /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		4D8D3A852D2EC5CC009D61AD /* WorksoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorksoutView.swift; sourceTree = "<group>"; };
 		4D8D3A872D31520C009D61AD /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
@@ -136,6 +144,25 @@
 				035C26F02D2E529300BB20B8 /* RouteTabView.swift */,
 			);
 			path = RouteTab;
+			sourceTree = "<group>";
+		};
+		03FC07982D51F8A300EBF374 /* fastlane */ = {
+			isa = PBXGroup;
+			children = (
+				03FC07962D51F8A300EBF374 /* Appfile */,
+				03FC07972D51F8A300EBF374 /* Fastfile */,
+				03FC079E2D51FE0B00EBF374 /* Matchfile */,
+			);
+			path = fastlane;
+			sourceTree = SOURCE_ROOT;
+		};
+		03FC079B2D51F8BB00EBF374 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				03FC079C2D51F8CA00EBF374 /* Debug.xcconfig */,
+				03FC079D2D51F8D100EBF374 /* Release.xcconfig */,
+			);
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 		4D8D3A792D2EBD86009D61AD /* Entity */ = {
@@ -219,6 +246,8 @@
 				4DC95A312D2D7117006195E4 /* .swiftformat */,
 				4DC95A272D2D6FAF006195E4 /* Assets.xcassets */,
 				035C26E82D2E3E7100BB20B8 /* ColorAssets.xcassets */,
+				03FC079B2D51F8BB00EBF374 /* Configuration */,
+				03FC07982D51F8A300EBF374 /* fastlane */,
 				4DC95A232D2D6FAE006195E4 /* HaruFitApp.swift */,
 				4DC95A252D2D6FAE006195E4 /* ContentView.swift */,
 				4DC95A392D2D787C006195E4 /* Resource */,
@@ -352,6 +381,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03FC079F2D51FE0B00EBF374 /* Matchfile in Resources */,
+				03FC079A2D51F8A300EBF374 /* Fastfile in Resources */,
+				03FC07992D51F8A300EBF374 /* Appfile in Resources */,
 				035C26E22D2E0D9600BB20B8 /* PretendardVariable.ttf in Resources */,
 				035C26F52D2E5ED800BB20B8 /* .gitignore in Resources */,
 				4DC95A342D2D711F006195E4 /* .swiftlint.yml in Resources */,
@@ -565,6 +597,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HaruFit/Preview Content\"";
@@ -574,6 +607,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HaruFit/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = HaruFit;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -587,6 +621,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sijongKim.HaruFit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -602,6 +637,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HaruFit/Preview Content\"";
@@ -611,6 +647,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HaruFit/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = HaruFit;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -624,6 +661,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sijongKim.HaruFit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
