@@ -27,27 +27,13 @@ struct WeightTrainingRecordView: View {
                 .ignoresSafeArea()
             
             VStack {
-                HeaderText()
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.vertical, 30)
+                HeaderTextView(title: "오늘의 헬스", subTitle: "오늘 진행한 운동을 선택해주세요.")
+
                 ExerciseListView(viewModel: viewModel)
                 Spacer()
                 
             }
             .padding()
-        }
-    }
-}
-
-struct HeaderText: View {
-    var body: some View {
-        VStack(alignment: .leading) {
-            Text("오늘의 헬스")
-                .h1()
-                .foregroundColor(.interactionDisable)
-            Text("오늘 진행한 운동을 선택해주세요.")
-                .b1()
-                .foregroundColor(.interactionInactive)
         }
     }
 }

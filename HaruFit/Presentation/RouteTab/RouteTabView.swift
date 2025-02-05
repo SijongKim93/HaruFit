@@ -16,9 +16,9 @@ struct RouteTabView: View {
             case .workout:
                 WorksoutView()
             case .collect:
-                ContentView()
+                WorksoutView()
             case .record:
-                ContentView()
+                WorksoutView()
             }
 
             Spacer()
