@@ -62,40 +62,41 @@ struct WorksoutView: View {
                         .padding(.bottom, 25)
 
                         // 운동 기록하기
-                        HeaderTextView(
-                            title: "운동 기록하기",
-                            subTitle: "오늘 진행한 운동을 기록해주세요."
-                        )
-                        .padding(.horizontal)
-                        .padding(.bottom, 10)
-
-                        // 오늘 기록이 없으면 "운동 추가하기" 큰 버튼
-                        if viewModel.todayRecords.isEmpty {
+                        HStack(alignment: .bottom) {
+                            HeaderTextView(
+                                title: "운동 기록하기",
+                                subTitle: "오늘 진행한 운동을 기록해주세요."
+                            )
+                            
                             Button {
                                 viewModel.addRecord(exerciseName: "벤치")
                             } label: {
-                                Text("운동 추가하기")
-                                    .b1()
-                                    .foregroundColor(.white)
-                                    .frame(maxWidth: .infinity, minHeight: 60)
-                                    .background(Color.accentColor)
-                                    .cornerRadius(12)
-                                    .padding(.horizontal)
+                                HStack(spacing: 3) {
+                                    Text("기록 추가")
+                                    Image(systemName: "plus")
+                                }
+                                .b1()
+                                .foregroundColor(.accent)
                             }
+                        }
+                        .padding(.horizontal)
+                        .padding(.bottom, 10)
+                        
+                        if viewModel.todayRecords.isEmpty {
+                            ContentsCardView(icon: AppImages.WorkoutImage.weightTraining, mainTitle: "아직 등록된 운동이 없어요.", subTitle: "우측 상단을 눌러 추가해주세요.")
+                                .padding(.horizontal)
                         } else {
-                            // 기록이 있으면 ContentsCardView로 표시
                             ForEach(viewModel.todayRecords) { record in
                                 ContentsCardView(
                                     icon: AppImages.WorkoutImage.weightTraining,
                                     mainTitle: record.exerciseName,
-                                    subTitle: formatDate(record.date)
+                                    subTitle: record.date.formattedKoreanString
                                 )
                                 .padding(.horizontal)
+                                .padding(.bottom, 10)
                             }
                         }
-
                         Spacer()
-                            .frame(height: 50)
                     }
                 }
             }
