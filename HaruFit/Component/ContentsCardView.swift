@@ -21,24 +21,19 @@ struct ContentsCardView: View {
                 Image(icon)
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 24, height: 24)
+                    .frame(width: 50, height: 50)
 
                 VStack(alignment: .leading, spacing: 4) {
                     Text(mainTitle)
-                        .h1()
+                        .b1()
                         .foregroundColor(.interactionDisable)
 
                     Text(subTitle)
-                        .b1()
+                        .b4()
                         .foregroundColor(.interactionInactive)
                 }
 
                 Spacer()
-
-
-
-
-
             }
             .padding()
         }

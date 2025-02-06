@@ -15,9 +15,6 @@
 		035C26F12D2E529300BB20B8 /* RouteTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C26F02D2E529300BB20B8 /* RouteTabView.swift */; };
 		035C26F32D2E54EA00BB20B8 /* TabItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C26F22D2E54EA00BB20B8 /* TabItems.swift */; };
 		035C26F52D2E5ED800BB20B8 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 035C26F42D2E5ED800BB20B8 /* .gitignore */; };
-		03FC07992D51F8A300EBF374 /* Appfile in Resources */ = {isa = PBXBuildFile; fileRef = 03FC07962D51F8A300EBF374 /* Appfile */; };
-		03FC079A2D51F8A300EBF374 /* Fastfile in Resources */ = {isa = PBXBuildFile; fileRef = 03FC07972D51F8A300EBF374 /* Fastfile */; };
-		03FC079F2D51FE0B00EBF374 /* Matchfile in Resources */ = {isa = PBXBuildFile; fileRef = 03FC079E2D51FE0B00EBF374 /* Matchfile */; };
 		03FC07A42D52F6DE00EBF374 /* ContentsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FC07A32D52F6DE00EBF374 /* ContentsCardView.swift */; };
 		03FC07A62D52F9E800EBF374 /* HeaderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FC07A52D52F9E800EBF374 /* HeaderTextView.swift */; };
 		03FC07AA2D5306A100EBF374 /* HCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FC07A92D5306A100EBF374 /* HCalendarViewModel.swift */; };
@@ -51,6 +48,9 @@
 		4D8D3AC72D491802009D61AD /* WeightTrainingRecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3AC62D491802009D61AD /* WeightTrainingRecordViewModel.swift */; };
 		4D8D3AC92D4918EB009D61AD /* WeightTrainingRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3AC82D4918EB009D61AD /* WeightTrainingRecordView.swift */; };
 		4D8D3ACB2D491CA3009D61AD /* ExerciseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3ACA2D491CA3009D61AD /* ExerciseListView.swift */; };
+		4D8D3AD42D54E441009D61AD /* Fastfile in Resources */ = {isa = PBXBuildFile; fileRef = 4D8D3AD32D54E441009D61AD /* Fastfile */; };
+		4D8D3AD72D54E475009D61AD /* Appfile in Resources */ = {isa = PBXBuildFile; fileRef = 4D8D3AD62D54E475009D61AD /* Appfile */; };
+		4D8D3AD92D54E47D009D61AD /* Matchfile in Resources */ = {isa = PBXBuildFile; fileRef = 4D8D3AD82D54E47D009D61AD /* Matchfile */; };
 		4DC95A242D2D6FAE006195E4 /* HaruFitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC95A232D2D6FAE006195E4 /* HaruFitApp.swift */; };
 		4DC95A282D2D6FAF006195E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DC95A272D2D6FAF006195E4 /* Assets.xcassets */; };
 		4DC95A2B2D2D6FAF006195E4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DC95A2A2D2D6FAF006195E4 /* Preview Assets.xcassets */; };
@@ -68,11 +68,8 @@
 		035C26F02D2E529300BB20B8 /* RouteTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTabView.swift; sourceTree = "<group>"; };
 		035C26F22D2E54EA00BB20B8 /* TabItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItems.swift; sourceTree = "<group>"; };
 		035C26F42D2E5ED800BB20B8 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
-		03FC07962D51F8A300EBF374 /* Appfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Appfile; sourceTree = "<group>"; };
-		03FC07972D51F8A300EBF374 /* Fastfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Fastfile; sourceTree = "<group>"; };
 		03FC079C2D51F8CA00EBF374 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		03FC079D2D51F8D100EBF374 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
-		03FC079E2D51FE0B00EBF374 /* Matchfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Matchfile; sourceTree = "<group>"; };
 		03FC07A32D52F6DE00EBF374 /* ContentsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsCardView.swift; sourceTree = "<group>"; };
 		03FC07A52D52F9E800EBF374 /* HeaderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTextView.swift; sourceTree = "<group>"; };
 		03FC07A92D5306A100EBF374 /* HCalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCalendarViewModel.swift; sourceTree = "<group>"; };
@@ -99,6 +96,9 @@
 		4D8D3AC62D491802009D61AD /* WeightTrainingRecordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightTrainingRecordViewModel.swift; sourceTree = "<group>"; };
 		4D8D3AC82D4918EB009D61AD /* WeightTrainingRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightTrainingRecordView.swift; sourceTree = "<group>"; };
 		4D8D3ACA2D491CA3009D61AD /* ExerciseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListView.swift; sourceTree = "<group>"; };
+		4D8D3AD32D54E441009D61AD /* Fastfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Fastfile; sourceTree = "<group>"; };
+		4D8D3AD62D54E475009D61AD /* Appfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Appfile; sourceTree = "<group>"; };
+		4D8D3AD82D54E47D009D61AD /* Matchfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Matchfile; sourceTree = "<group>"; };
 		4DC95A202D2D6FAE006195E4 /* HaruFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HaruFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DC95A232D2D6FAE006195E4 /* HaruFitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaruFitApp.swift; sourceTree = "<group>"; };
 		4DC95A272D2D6FAF006195E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -162,16 +162,6 @@
 			);
 			path = RouteTab;
 			sourceTree = "<group>";
-		};
-		03FC07982D51F8A300EBF374 /* fastlane */ = {
-			isa = PBXGroup;
-			children = (
-				03FC07962D51F8A300EBF374 /* Appfile */,
-				03FC07972D51F8A300EBF374 /* Fastfile */,
-				03FC079E2D51FE0B00EBF374 /* Matchfile */,
-			);
-			path = fastlane;
-			sourceTree = SOURCE_ROOT;
 		};
 		03FC079B2D51F8BB00EBF374 /* Configuration */ = {
 			isa = PBXGroup;
@@ -313,6 +303,16 @@
 			path = Exercise;
 			sourceTree = "<group>";
 		};
+		4D8D3AD02D54E404009D61AD /* fastlane */ = {
+			isa = PBXGroup;
+			children = (
+				4D8D3AD32D54E441009D61AD /* Fastfile */,
+				4D8D3AD62D54E475009D61AD /* Appfile */,
+				4D8D3AD82D54E47D009D61AD /* Matchfile */,
+			);
+			path = fastlane;
+			sourceTree = "<group>";
+		};
 		4DC95A172D2D6FAE006195E4 = {
 			isa = PBXGroup;
 			children = (
@@ -339,7 +339,7 @@
 				4DC95A272D2D6FAF006195E4 /* Assets.xcassets */,
 				035C26E82D2E3E7100BB20B8 /* ColorAssets.xcassets */,
 				03FC079B2D51F8BB00EBF374 /* Configuration */,
-				03FC07982D51F8A300EBF374 /* fastlane */,
+				4D8D3AD02D54E404009D61AD /* fastlane */,
 				4DC95A232D2D6FAE006195E4 /* HaruFitApp.swift */,
 				4DC95A392D2D787C006195E4 /* Resource */,
 				03FC07B42D533C4600EBF374 /* Dependency */,
@@ -474,11 +474,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03FC079F2D51FE0B00EBF374 /* Matchfile in Resources */,
-				03FC079A2D51F8A300EBF374 /* Fastfile in Resources */,
-				03FC07992D51F8A300EBF374 /* Appfile in Resources */,
+				4D8D3AD72D54E475009D61AD /* Appfile in Resources */,
+				4D8D3AD92D54E47D009D61AD /* Matchfile in Resources */,
 				035C26E22D2E0D9600BB20B8 /* PretendardVariable.ttf in Resources */,
 				035C26F52D2E5ED800BB20B8 /* .gitignore in Resources */,
+				4D8D3AD42D54E441009D61AD /* Fastfile in Resources */,
 				4DC95A342D2D711F006195E4 /* .swiftlint.yml in Resources */,
 				4DC95A2B2D2D6FAF006195E4 /* Preview Assets.xcassets in Resources */,
 				4DC95A282D2D6FAF006195E4 /* Assets.xcassets in Resources */,
