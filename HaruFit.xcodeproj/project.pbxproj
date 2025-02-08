@@ -51,6 +51,8 @@
 		4D8D3AD42D54E441009D61AD /* Fastfile in Resources */ = {isa = PBXBuildFile; fileRef = 4D8D3AD32D54E441009D61AD /* Fastfile */; };
 		4D8D3AD72D54E475009D61AD /* Appfile in Resources */ = {isa = PBXBuildFile; fileRef = 4D8D3AD62D54E475009D61AD /* Appfile */; };
 		4D8D3AD92D54E47D009D61AD /* Matchfile in Resources */ = {isa = PBXBuildFile; fileRef = 4D8D3AD82D54E47D009D61AD /* Matchfile */; };
+		4D8D3ADB2D579383009D61AD /* ExerciseInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3ADA2D579383009D61AD /* ExerciseInputView.swift */; };
+		4D8D3ADE2D579858009D61AD /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3ADD2D579858009D61AD /* View+Extension.swift */; };
 		4DC95A242D2D6FAE006195E4 /* HaruFitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC95A232D2D6FAE006195E4 /* HaruFitApp.swift */; };
 		4DC95A282D2D6FAF006195E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DC95A272D2D6FAF006195E4 /* Assets.xcassets */; };
 		4DC95A2B2D2D6FAF006195E4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DC95A2A2D2D6FAF006195E4 /* Preview Assets.xcassets */; };
@@ -99,6 +101,8 @@
 		4D8D3AD32D54E441009D61AD /* Fastfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Fastfile; sourceTree = "<group>"; };
 		4D8D3AD62D54E475009D61AD /* Appfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Appfile; sourceTree = "<group>"; };
 		4D8D3AD82D54E47D009D61AD /* Matchfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Matchfile; sourceTree = "<group>"; };
+		4D8D3ADA2D579383009D61AD /* ExerciseInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseInputView.swift; sourceTree = "<group>"; };
+		4D8D3ADD2D579858009D61AD /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		4DC95A202D2D6FAE006195E4 /* HaruFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HaruFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DC95A232D2D6FAE006195E4 /* HaruFitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaruFitApp.swift; sourceTree = "<group>"; };
 		4DC95A272D2D6FAF006195E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -299,6 +303,7 @@
 			children = (
 				03FC07A12D52F2DD00EBF374 /* View */,
 				03FC07A22D52F2E100EBF374 /* ViewModel */,
+				4D8D3ADA2D579383009D61AD /* ExerciseInputView.swift */,
 			);
 			path = Exercise;
 			sourceTree = "<group>";
@@ -311,6 +316,14 @@
 				4D8D3AD82D54E47D009D61AD /* Matchfile */,
 			);
 			path = fastlane;
+			sourceTree = "<group>";
+		};
+		4D8D3ADC2D57984E009D61AD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4D8D3ADD2D579858009D61AD /* View+Extension.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		4DC95A172D2D6FAE006195E4 = {
@@ -363,6 +376,7 @@
 		4DC95A392D2D787C006195E4 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				4D8D3ADC2D57984E009D61AD /* View */,
 				03FC07AD2D5309C500EBF374 /* Date */,
 				4D8D3AAE2D412D29009D61AD /* Exercise */,
 				035C26EC2D2E4AAC00BB20B8 /* Image */,
@@ -552,8 +566,10 @@
 				4D8D3AC32D4914BC009D61AD /* ExerciseRepository.swift in Sources */,
 				4D8D3AB72D428E36009D61AD /* UserSession.swift in Sources */,
 				4D8D3AB92D428EBC009D61AD /* UserSessionUseCase.swift in Sources */,
+				4D8D3ADB2D579383009D61AD /* ExerciseInputView.swift in Sources */,
 				03FC07B82D533D0D00EBF374 /* WorkoutType.swift in Sources */,
 				4D8D3A862D2EC5CC009D61AD /* WorksoutView.swift in Sources */,
+				4D8D3ADE2D579858009D61AD /* View+Extension.swift in Sources */,
 				035C26F32D2E54EA00BB20B8 /* TabItems.swift in Sources */,
 				4D8D3ABF2D490EE1009D61AD /* Exercise.swift in Sources */,
 				4D8D3A8A2D315460009D61AD /* WorkoutRecordRepository.swift in Sources */,

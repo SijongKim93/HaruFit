@@ -25,11 +25,11 @@ struct ContentsCardView: View {
 
                 VStack(alignment: .leading, spacing: 4) {
                     Text(mainTitle)
-                        .b1()
+                        .b2()
                         .foregroundColor(.interactionDisable)
 
                     Text(subTitle)
-                        .b4()
+                        .b5()
                         .foregroundColor(.interactionInactive)
                 }
 
@@ -39,7 +39,6 @@ struct ContentsCardView: View {
         }
     }
 }
-
 
 #Preview {
     ContentsCardView(icon: AppImages.WorkoutImage.weightTraining, mainTitle: "벤치프레스", subTitle: "3세트 12회")

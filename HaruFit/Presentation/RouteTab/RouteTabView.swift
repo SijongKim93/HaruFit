@@ -21,7 +21,6 @@ struct RouteTabView: View {
                 WorksoutView()
             }
 
-            Spacer()
 
             HStack {
                 ForEach(Tab.allCases, id: \.self) { tab in
@@ -43,7 +42,9 @@ struct RouteTabView: View {
                 }
             }
             .padding(.horizontal, 16)
-            .frame(height: 90)
+            .frame(height: 70)
+            
+            Spacer()
         }
         .background(Color.backgroundBlack)
         .edgesIgnoringSafeArea(.bottom)
