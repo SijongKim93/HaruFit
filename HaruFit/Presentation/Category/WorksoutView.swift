@@ -9,9 +9,9 @@ import SwiftUI
 
 struct WorksoutView: View {
     @StateObject private var viewModel: WorksoutViewModel
+    @State private var showExersiseInput = false
 
     init() {
-        // 간단 DI
         let repo = InMemoryWorkoutRepository()
         let fetchUC = DefaultFetchTodayRecordsUseCase(repository: repo)
         let addUC = DefaultAddRecordUseCase(repository: repo)
@@ -53,7 +53,6 @@ struct WorksoutView: View {
                         .padding(.horizontal)
 
                         // 운동 선택(웨이트/런닝 등)
-                        // 만약 user가 누르면 selectedWorkout 바꿀 수도, 여기선 기본값
                         HStack(spacing: 10) {
                             workoutButton(title: "웨이트 트레이닝", type: .weightTraining)
                             workoutButton(title: "런닝", type: .running)
@@ -67,9 +66,11 @@ struct WorksoutView: View {
                                 title: "운동 기록하기",
                                 subTitle: "오늘 진행한 운동을 기록해주세요."
                             )
-                            
+
                             Button {
-                                viewModel.addRecord(exerciseName: "벤치")
+                                withAnimation {
+                                    showExersiseInput = true
+                                }
                             } label: {
                                 HStack(spacing: 3) {
                                     Text("기록 추가")
@@ -81,10 +82,14 @@ struct WorksoutView: View {
                         }
                         .padding(.horizontal)
                         .padding(.bottom, 10)
-                        
+
                         if viewModel.todayRecords.isEmpty {
-                            ContentsCardView(icon: AppImages.WorkoutImage.weightTraining, mainTitle: "아직 등록된 운동이 없어요.", subTitle: "우측 상단을 눌러 추가해주세요.")
-                                .padding(.horizontal)
+                            ContentsCardView(
+                                icon: AppImages.WorkoutImage.weightTraining,
+                                mainTitle: "아직 등록된 운동이 없어요.",
+                                subTitle: "우측 상단을 눌러 추가해주세요."
+                            )
+                            .padding(.horizontal)
                         } else {
                             ForEach(viewModel.todayRecords) { record in
                                 ContentsCardView(
@@ -101,23 +106,45 @@ struct WorksoutView: View {
                 }
             }
         }
-    }
+        // 여기서 .overlay로 오버레이를 붙이면 WorksoutView의 intrinsic size는 변하지 않습니다.
+        .overlay(
+            Group {
+                if showExersiseInput {
+                    ZStack(alignment: .bottom) {
+                        Color.backgroundBlack.opacity(0.4)
+                            .ignoresSafeArea() // 배경 dim 처리
+                            .onTapGesture {
+                                withAnimation {
+                                    showExersiseInput = false
+                                }
+                            }
 
-    // 간단 날짜 포맷
-    private func formatDate(_ date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
-        return dateFormatter.string(from: date)
+                        ExerciseInputView { selectedExercise in
+                            if !selectedExercise.isEmpty {
+                                viewModel.addRecord(exerciseName: selectedExercise)
+                            }
+                            withAnimation {
+                                showExersiseInput = false
+                            }
+                        }
+                        .frame(maxWidth: .infinity)
+                        .frame(height: UIScreen.main.bounds.height * 0.80)
+                        .background(Color.backgroundGray)
+                        .cornerRadius(20, corners: [.topLeft, .topRight])
+                        .transition(.move(edge: .bottom))
+                    }
+                    .animation(.easeInOut, value: showExersiseInput)
+                }
+            }
+        )
     }
 
     // 운동 타입 버튼
     private func workoutButton(title: String, type: WorkoutType) -> some View {
         Button {
-            // 탭하면 selectedWorkout을 바꿈
             viewModel.selectedWorkout = type
         } label: {
             VStack(spacing: 20) {
-                // 단순 아이콘 예시
                 Image(type == .weightTraining ? AppImages.WorkoutImage.weightTraining :
                       AppImages.WorkoutImage.running)
                     .resizable()

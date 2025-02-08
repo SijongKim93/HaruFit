@@ -18,4 +18,10 @@ extension Date {
         formatter.dateFormat = "yyyy년 MM월 dd일"
         return formatter.string(from: self)
     }
+    
+    private func formatDate(_ date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        return dateFormatter.string(from: date)
+    }
 }
