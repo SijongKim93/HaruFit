@@ -43,6 +43,11 @@ extension View {
     }
 
     // MARK: - Headline
+    
+    func largeH1() -> some View {
+        let style = CustomFontStyle(size: 32, weight: .semiBold, lineHeight: 1.3)
+        return applyTextStyle(style: style)
+    }
 
     func h1() -> some View {
         let style = CustomFontStyle(size: 22, weight: .semiBold, lineHeight: 1.3)

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -45,7 +45,6 @@
 		4D8D3ABF2D490EE1009D61AD /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3ABE2D490EE1009D61AD /* Exercise.swift */; };
 		4D8D3AC12D4913D8009D61AD /* ExerciseUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3AC02D4913D8009D61AD /* ExerciseUseCase.swift */; };
 		4D8D3AC32D4914BC009D61AD /* ExerciseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3AC22D4914BC009D61AD /* ExerciseRepository.swift */; };
-		4D8D3AC92D4918EB009D61AD /* WeightTrainingRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3AC82D4918EB009D61AD /* WeightTrainingRecordView.swift */; };
 		4D8D3AD42D54E441009D61AD /* Fastfile in Resources */ = {isa = PBXBuildFile; fileRef = 4D8D3AD32D54E441009D61AD /* Fastfile */; };
 		4D8D3AD72D54E475009D61AD /* Appfile in Resources */ = {isa = PBXBuildFile; fileRef = 4D8D3AD62D54E475009D61AD /* Appfile */; };
 		4D8D3AD92D54E47D009D61AD /* Matchfile in Resources */ = {isa = PBXBuildFile; fileRef = 4D8D3AD82D54E47D009D61AD /* Matchfile */; };
@@ -93,7 +92,6 @@
 		4D8D3ABE2D490EE1009D61AD /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		4D8D3AC02D4913D8009D61AD /* ExerciseUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseUseCase.swift; sourceTree = "<group>"; };
 		4D8D3AC22D4914BC009D61AD /* ExerciseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseRepository.swift; sourceTree = "<group>"; };
-		4D8D3AC82D4918EB009D61AD /* WeightTrainingRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightTrainingRecordView.swift; sourceTree = "<group>"; };
 		4D8D3AD32D54E441009D61AD /* Fastfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Fastfile; sourceTree = "<group>"; };
 		4D8D3AD62D54E475009D61AD /* Appfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Appfile; sourceTree = "<group>"; };
 		4D8D3AD82D54E47D009D61AD /* Matchfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Matchfile; sourceTree = "<group>"; };
@@ -106,6 +104,10 @@
 		4DC95A312D2D7117006195E4 /* .swiftformat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftformat; sourceTree = SOURCE_ROOT; };
 		4DC95A332D2D711E006195E4 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		4DF724C82D5E21CD00937E7E /* Collect */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Collect; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		4DC95A1D2D2D6FAE006195E4 /* Frameworks */ = {
@@ -219,7 +221,6 @@
 		03FC07B02D5336CB00EBF374 /* WeightTraining */ = {
 			isa = PBXGroup;
 			children = (
-				4D8D3AC82D4918EB009D61AD /* WeightTrainingRecordView.swift */,
 			);
 			path = WeightTraining;
 			sourceTree = "<group>";
@@ -296,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				03FC07A12D52F2DD00EBF374 /* View */,
+				4DF724C82D5E21CD00937E7E /* Collect */,
 				03FC07A22D52F2E100EBF374 /* ViewModel */,
 				4D8D3ADA2D579383009D61AD /* ExerciseInputView.swift */,
 			);
@@ -425,6 +427,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				4DF724C82D5E21CD00937E7E /* Collect */,
 			);
 			name = HaruFit;
 			packageProductDependencies = (
@@ -567,7 +572,6 @@
 				4D8D3A8A2D315460009D61AD /* WorkoutRecordRepository.swift in Sources */,
 				03FC07A62D52F9E800EBF374 /* HeaderTextView.swift in Sources */,
 				4DC95A242D2D6FAE006195E4 /* HaruFitApp.swift in Sources */,
-				4D8D3AC92D4918EB009D61AD /* WeightTrainingRecordView.swift in Sources */,
 				03FC07AC2D5308A500EBF374 /* HCalendarView.swift in Sources */,
 				03FC07AA2D5306A100EBF374 /* HCalendarViewModel.swift in Sources */,
 				03FC07A42D52F6DE00EBF374 /* ContentsCardView.swift in Sources */,
