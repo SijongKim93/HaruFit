@@ -16,11 +16,10 @@ struct RouteTabView: View {
             case .workout:
                 WorksoutView()
             case .collect:
-                WorksoutView()
+                CollectView()
             case .record:
                 WorksoutView()
             }
-
 
             HStack {
                 ForEach(Tab.allCases, id: \.self) { tab in

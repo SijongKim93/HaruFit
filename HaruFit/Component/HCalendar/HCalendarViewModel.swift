@@ -28,7 +28,5 @@ class HCalendarViewModel: ObservableObject {
             twoDaysAgo : 0
         ]
     }
-
-
 }
 

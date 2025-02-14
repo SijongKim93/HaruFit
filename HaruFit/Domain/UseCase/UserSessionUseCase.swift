@@ -10,9 +10,9 @@ import Foundation
 protocol UserSessionUseCase {
     func login(
         userId: String,
-        gender: String?,
-        age: Int?,
-        nickname: String?,
+        gender: String,
+        age: Int,
+        nickname: String,
         profileImageData: Data?) -> UserSession
     func logout()
     func currentSession() -> UserSession?
@@ -27,9 +27,9 @@ class DefaultUserSessionUseCase: UserSessionUseCase {
     
     func login(
         userId: String,
-        gender: String?,
-        age: Int?,
-        nickname: String?,
+        gender: String,
+        age: Int,
+        nickname: String,
         profileImageData: Data?) -> UserSession 
     {
         let newSession = UserSession(
