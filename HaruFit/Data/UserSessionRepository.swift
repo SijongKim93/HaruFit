@@ -26,7 +26,7 @@ class AppStorageUserSessionRepository: UserSessionRepository {
         userId = session.userId
         nickname = session.nickname
         gender = session.gender
-        age = session.age ?? 0
+        age = session.age
         isLoggedIn = session.isLoggedIn
         
         if let imageData = session.proflieImageData {
@@ -43,10 +43,10 @@ class AppStorageUserSessionRepository: UserSessionRepository {
         
         return UserSession(
             userId: uid,
-            nickname: nickname,
+            nickname: nickname ?? "unknown",
             proflieImageData: decodedData,
-            gender: gender,
-            age: (age == 0 ? nil : age),
+            gender: gender ?? "unknown",
+            age: age,
             isLoggedIn: isLoggedIn
         )
     }

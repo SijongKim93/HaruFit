@@ -14,36 +14,40 @@ struct CollectView: View {
     ]
     
     var body: some View {
-        ScrollView {
-            VStack {
-                Text("🏆 수집품 🏆")
-                    .largeH1()
-                    .padding()
-                    .foregroundColor(.interactionDisable)
-                
-                LazyVGrid(columns: columns, spacing: 16) {
-                    ForEach(0..<10) { index in
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 12)
-                                .fill(Color.backgroundGray.opacity(0.5))
-                                .shadow(color: Color.black.opacity(0.3), radius: 4, x: 2, y: 2)
-                            VStack {
-                                Image(systemName: "circle.fill")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 100, height: 100)
-                                    .foregroundColor(.backgroundBlack.opacity(0.8))
-                                
-                                Text("???")
-                                    .h1()
-                                    .foregroundColor(.interactionDisable)
+        VStack {
+            HeaderView()
+            
+            ScrollView {
+                VStack() {
+                    Text("🏆 Collection 🏆")
+                        .largeH1()
+                        .padding()
+                        .foregroundColor(.interactionDisable)
+                    
+                    LazyVGrid(columns: columns, spacing: 16) {
+                        ForEach(0..<10) { index in
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 12)
+                                    .fill(Color.backgroundGray.opacity(0.5))
+                                    .shadow(color: Color.black.opacity(0.3), radius: 4, x: 2, y: 2)
+                                VStack {
+                                    Image(systemName: "circle.fill")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 100, height: 100)
+                                        .foregroundColor(.backgroundBlack.opacity(0.8))
+                                    
+                                    Text("???")
+                                        .h1()
+                                        .foregroundColor(.interactionDisable)
+                                }
                             }
+                            .aspectRatio(1, contentMode: .fit)
+                            .frame(maxWidth: .infinity)
                         }
-                        .aspectRatio(1, contentMode: .fit)
-                        .frame(maxWidth: .infinity)
                     }
+                    .padding(.horizontal, 16)
                 }
-                .padding(.horizontal, 16)
             }
         }
         .background(Color.backgroundBlack)
