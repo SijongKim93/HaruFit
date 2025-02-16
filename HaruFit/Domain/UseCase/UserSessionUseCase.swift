@@ -11,7 +11,7 @@ protocol UserSessionUseCase {
     func login(
         userId: String,
         gender: String,
-        age: Int,
+        ageGroup: String,
         nickname: String,
         profileImageData: Data?) -> UserSession
     func logout()
@@ -28,7 +28,7 @@ class DefaultUserSessionUseCase: UserSessionUseCase {
     func login(
         userId: String,
         gender: String,
-        age: Int,
+        ageGroup: String,
         nickname: String,
         profileImageData: Data?) -> UserSession 
     {
@@ -37,7 +37,7 @@ class DefaultUserSessionUseCase: UserSessionUseCase {
             nickname: nickname,
             proflieImageData: profileImageData,
             gender: gender,
-            age: age,
+            ageGroup: ageGroup,
             isLoggedIn: true
         )
         repository.save(session: newSession)
