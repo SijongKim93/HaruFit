@@ -10,15 +10,12 @@ import Combine
 
 final class UserInfoViewModel: ObservableObject {
     enum Step: Int {
-        case nickname = 0
-        case gender
-        case age
-        case complete
+        case nickname = 0, gender, age, complete
     }
     
     @Published var nickname: String = ""
-    @Published var selectedGender: String = "male"
-    @Published var age: Int = 0
+    @Published var selectedGender: String = ""
+    @Published var ageGroup: String = ""
     
     @Published var currentStep: Step = .nickname
     
@@ -32,12 +29,18 @@ final class UserInfoViewModel: ObservableObject {
     func nextStep() {
         switch currentStep {
         case .nickname:
-            currentStep = .gender
+            if nickname.count >= 2 {
+                currentStep = .gender
+            }
         case .gender:
-            currentStep = .age
+            if !selectedGender.isEmpty {
+                currentStep = .age
+            }
         case .age:
-            
-            currentStep = .complete
+            if !ageGroup.isEmpty {
+                saveUserSession()
+                currentStep = .complete
+            }
         case .complete:
             break
         }
@@ -47,7 +50,7 @@ final class UserInfoViewModel: ObservableObject {
         _ = userSessionUseCase.login(
             userId: "testUserId",
             gender: selectedGender,
-            age: age,
+            ageGroup: ageGroup,
             nickname: nickname,
             profileImageData: nil
         )

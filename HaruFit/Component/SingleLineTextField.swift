@@ -17,14 +17,14 @@ struct SingleLineTextField: View {
     let placeholder: String
     
     var body: some View {
-        VStack(spacing: 4) {
+        VStack(spacing: 12) {
             // 실제 텍스트필드
             TextField("", text: $text)
+                .h1()
                 .focused($isFocused)
-                // 포커스 여부에 따라 글자색 변경
                 .foregroundColor(isFocused ? .interactionDisable : .interactionInactive)
                 .textFieldStyle(.plain)
-                .frame(height: 20)
+                .frame(height: 30)
                 .overlay(
                     // Placeholder 직접 구현
                     Group {
@@ -62,4 +62,3 @@ struct SingleLineTextField_Previews: PreviewProvider {
         .previewLayout(.sizeThatFits)
     }
 }
-

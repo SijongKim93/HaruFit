@@ -12,7 +12,7 @@ struct UserSession: Equatable {
     let nickname: String
     let proflieImageData: Data?
     let gender: String
-    let age: Int
+    let ageGroup: String
     
     let isLoggedIn: Bool
 }

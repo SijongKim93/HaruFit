@@ -20,7 +20,7 @@
 		03FC07AA2D5306A100EBF374 /* HCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FC07A92D5306A100EBF374 /* HCalendarViewModel.swift */; };
 		03FC07AC2D5308A500EBF374 /* HCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FC07AB2D5308A500EBF374 /* HCalendarView.swift */; };
 		03FC07AF2D5309D100EBF374 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FC07AE2D5309D100EBF374 /* Date+Extension.swift */; };
-		03FC07B62D533C5C00EBF374 /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FC07B52D533C5C00EBF374 /* AppDIContainer.swift */; };
+		03FC07B62D533C5C00EBF374 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FC07B52D533C5C00EBF374 /* DIContainer.swift */; };
 		03FC07B82D533D0D00EBF374 /* WorkoutType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FC07B72D533D0D00EBF374 /* WorkoutType.swift */; };
 		03FC07BA2D533D4300EBF374 /* WorkoutRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FC07B92D533D4300EBF374 /* WorkoutRecord.swift */; };
 		03FC07BC2D533E6600EBF374 /* FetchTodayRecordsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FC07BB2D533E6600EBF374 /* FetchTodayRecordsUseCase.swift */; };
@@ -75,7 +75,7 @@
 		03FC07A92D5306A100EBF374 /* HCalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCalendarViewModel.swift; sourceTree = "<group>"; };
 		03FC07AB2D5308A500EBF374 /* HCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCalendarView.swift; sourceTree = "<group>"; };
 		03FC07AE2D5309D100EBF374 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
-		03FC07B52D533C5C00EBF374 /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
+		03FC07B52D533C5C00EBF374 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		03FC07B72D533D0D00EBF374 /* WorkoutType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutType.swift; sourceTree = "<group>"; };
 		03FC07B92D533D4300EBF374 /* WorkoutRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutRecord.swift; sourceTree = "<group>"; };
 		03FC07BB2D533E6600EBF374 /* FetchTodayRecordsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTodayRecordsUseCase.swift; sourceTree = "<group>"; };
@@ -253,7 +253,7 @@
 		03FC07B42D533C4600EBF374 /* Dependency */ = {
 			isa = PBXGroup;
 			children = (
-				03FC07B52D533C5C00EBF374 /* AppDIContainer.swift */,
+				03FC07B52D533C5C00EBF374 /* DIContainer.swift */,
 			);
 			path = Dependency;
 			sourceTree = "<group>";
@@ -554,7 +554,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03FC07B62D533C5C00EBF374 /* AppDIContainer.swift in Sources */,
+				03FC07B62D533C5C00EBF374 /* DIContainer.swift in Sources */,
 				4D8D3AC12D4913D8009D61AD /* ExerciseUseCase.swift in Sources */,
 				035C26EE2D2E4AC800BB20B8 /* AppImages.swift in Sources */,
 				4D8D3AB02D412D44009D61AD /* ExerciseResource.swift in Sources */,

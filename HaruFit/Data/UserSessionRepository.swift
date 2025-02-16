@@ -17,7 +17,7 @@ class AppStorageUserSessionRepository: UserSessionRepository {
     @AppStorage("userId") private var userId: String?
     @AppStorage("nickname") private var nickname: String?
     @AppStorage("gender") private var gender: String?
-    @AppStorage("age") private var age: Int = 0
+    @AppStorage("ageGroup") private var ageGroup: String?
     @AppStorage("isLoggedIn") private var isLoggedIn: Bool = false
     
     @AppStorage("profileImageBase64") private var profileImageBase64: String?
@@ -26,7 +26,7 @@ class AppStorageUserSessionRepository: UserSessionRepository {
         userId = session.userId
         nickname = session.nickname
         gender = session.gender
-        age = session.age
+        ageGroup = session.ageGroup
         isLoggedIn = session.isLoggedIn
         
         if let imageData = session.proflieImageData {
@@ -46,7 +46,7 @@ class AppStorageUserSessionRepository: UserSessionRepository {
             nickname: nickname ?? "unknown",
             proflieImageData: decodedData,
             gender: gender ?? "unknown",
-            age: age,
+            ageGroup: ageGroup ?? "unknown",
             isLoggedIn: isLoggedIn
         )
     }
@@ -55,7 +55,7 @@ class AppStorageUserSessionRepository: UserSessionRepository {
         userId = nil
         nickname = nil
         gender = nil
-        age = 0
+        ageGroup = nil
         isLoggedIn = false
         profileImageBase64 = nil
     }
