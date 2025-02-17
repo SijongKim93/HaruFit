@@ -13,9 +13,15 @@ protocol UserSessionUseCase {
         gender: String,
         ageGroup: String,
         nickname: String,
-        profileImageData: Data?) -> UserSession
+        profileImageData: Data?
+    ) -> UserSession
     func logout()
     func currentSession() -> UserSession?
+    
+    // 입력 유효성 검사 메서드들
+    func validateNickname(_ nickname: String) -> Bool
+    func validateGender(_ gender: String) -> Bool
+    func validateAgeGroup(_ ageGroup: String) -> Bool
 }
 
 class DefaultUserSessionUseCase: UserSessionUseCase {
@@ -30,8 +36,8 @@ class DefaultUserSessionUseCase: UserSessionUseCase {
         gender: String,
         ageGroup: String,
         nickname: String,
-        profileImageData: Data?) -> UserSession 
-    {
+        profileImageData: Data?
+    ) -> UserSession {
         let newSession = UserSession(
             userId: userId,
             nickname: nickname,
@@ -50,5 +56,18 @@ class DefaultUserSessionUseCase: UserSessionUseCase {
     
     func currentSession() -> UserSession? {
         repository.load()
+    }
+    
+    // 입력 유효성 검사
+    func validateNickname(_ nickname: String) -> Bool {
+        return nickname.count >= 2
+    }
+    
+    func validateGender(_ gender: String) -> Bool {
+        return !gender.isEmpty
+    }
+    
+    func validateAgeGroup(_ ageGroup: String) -> Bool {
+        return !ageGroup.isEmpty
     }
 }

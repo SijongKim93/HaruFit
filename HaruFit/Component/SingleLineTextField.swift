@@ -55,7 +55,7 @@ struct SingleLineTextField_Previews: PreviewProvider {
         // 예: 테스트용
         SingleLineTextField(
             text: .constant(""),
-            placeholder: "닉네임 입력"
+            placeholder: "닉네임 입력 ( 2자 이상 )"
         )
         .padding()
         .background(Color.black)
