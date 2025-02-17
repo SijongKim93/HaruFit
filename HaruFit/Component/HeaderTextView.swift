@@ -14,12 +14,12 @@ struct HeaderTextView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 2) {
             Text(title)
-                .h1()
+                .smallH1()
                 .foregroundColor(.interactionDisable)
 
             if let subTitle = subTitle {
                 Text(subTitle)
-                    .b1()
+                    .h1()
                     .foregroundColor(.interactionInactive)
             }
         }

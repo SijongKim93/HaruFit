@@ -40,7 +40,7 @@ struct CustomButton: View {
     private var buttonWidth: CGFloat? {
         switch size {
         case .large:
-            return UIScreen.main.bounds.width - 48
+            return UIScreen.main.bounds.width - 32
         case .medium:
             return 280
         case .small:

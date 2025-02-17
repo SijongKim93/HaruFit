@@ -48,6 +48,11 @@ extension View {
         let style = CustomFontStyle(size: 32, weight: .semiBold, lineHeight: 1.3)
         return applyTextStyle(style: style)
     }
+    
+    func smallH1() -> some View {
+        let style = CustomFontStyle(size: 28, weight: .semiBold, lineHeight: 1.3)
+        return applyTextStyle(style: style)
+    }
 
     func h1() -> some View {
         let style = CustomFontStyle(size: 22, weight: .semiBold, lineHeight: 1.3)

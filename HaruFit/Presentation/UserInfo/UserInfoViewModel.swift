@@ -10,7 +10,7 @@ import Combine
 
 final class UserInfoViewModel: ObservableObject {
     enum Step: Int {
-        case nickname = 0, gender, age, complete
+        case nickname, gender, age, complete
     }
     
     @Published var nickname: String = ""
@@ -29,15 +29,15 @@ final class UserInfoViewModel: ObservableObject {
     func nextStep() {
         switch currentStep {
         case .nickname:
-            if nickname.count >= 2 {
+            if userSessionUseCase.validateNickname(nickname) {
                 currentStep = .gender
             }
         case .gender:
-            if !selectedGender.isEmpty {
+            if userSessionUseCase.validateGender(selectedGender) {
                 currentStep = .age
             }
         case .age:
-            if !ageGroup.isEmpty {
+            if userSessionUseCase.validateAgeGroup(ageGroup) {
                 saveUserSession()
                 currentStep = .complete
             }
@@ -56,11 +56,24 @@ final class UserInfoViewModel: ObservableObject {
         )
     }
     
+    var isNextEnabled: Bool {
+        switch currentStep {
+        case .nickname:
+            return userSessionUseCase.validateNickname(nickname)
+        case .gender:
+            return userSessionUseCase.validateGender(selectedGender)
+        case .age:
+            return userSessionUseCase.validateAgeGroup(ageGroup)
+        case .complete:
+            return false
+        }
+    }
+    
     var progress: Double {
         switch currentStep {
         case .nickname: return 1.0 / 3.0
-        case .gender: return 2.0 / 3.0
-        case .age: return 3.0 / 3.0
+        case .gender:   return 2.0 / 3.0
+        case .age:      return 1.0
         case .complete: return 1.0
         }
     }

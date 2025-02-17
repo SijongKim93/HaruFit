@@ -18,7 +18,7 @@ struct CollectView: View {
             HeaderView()
             
             ScrollView {
-                VStack() {
+                VStack {
                     Text("🏆 Collection 🏆")
                         .largeH1()
                         .padding()
