@@ -8,18 +8,8 @@
 import SwiftUI
 
 struct WorksoutView: View {
-    @StateObject private var viewModel: WorksoutViewModel
+    @StateObject private var viewModel: WorksoutViewModel = DIContainer.shared.makeWorksoutViewModel()
     @State private var showExersiseInput = false
-
-    init() {
-        let repo = InMemoryWorkoutRepository()
-        let fetchUC = DefaultFetchTodayRecordsUseCase(repository: repo)
-        let addUC = DefaultAddRecordUseCase(repository: repo)
-        _viewModel = StateObject(wrappedValue: WorksoutViewModel(
-            fetchTodayRecordsUseCase: fetchUC,
-            addRecordUseCase: addUC
-        ))
-    }
 
     var body: some View {
         ZStack {
@@ -32,7 +22,6 @@ struct WorksoutView: View {
 
                 ScrollView {
                     VStack(alignment: .leading, spacing: 0) {
-                        // 캘린더
                         HCalendarView(viewModel: HCalendarViewModel())
                             .padding(.vertical, 10)
 
@@ -64,7 +53,7 @@ struct WorksoutView: View {
                         HStack(alignment: .bottom) {
                             HeaderTextView(
                                 title: "운동 기록하기",
-                                subTitle: "오늘 진행한 운동을 기록해주세요."
+                                subTitle: nil
                             )
 
                             Button {
@@ -106,7 +95,6 @@ struct WorksoutView: View {
                 }
             }
         }
-        // 여기서 .overlay로 오버레이를 붙이면 WorksoutView의 intrinsic size는 변하지 않습니다.
         .overlay(
             Group {
                 if showExersiseInput {
@@ -163,6 +151,7 @@ struct WorksoutView: View {
                           : Color.backgroundGray.opacity(0.5))
             )
         }
+        .navigationBarHidden(true)
     }
 }
 

@@ -4,52 +4,64 @@ struct UserInfoView: View {
     @ObservedObject var viewModel: UserInfoViewModel
     @State private var incomingStep: UserInfoViewModel.Step? = nil
     @State private var incomingOffset: CGFloat = UIScreen.main.bounds.width
-    
+    @State private var navigateToWorksout: Bool = false  // 추가: WorksoutView로 이동 여부
+
     var body: some View {
-        ZStack {
-            Color.backgroundBlack.ignoresSafeArea()
-            
-            VStack {
-                Spacer()
+        NavigationView {
+            ZStack {
+                Color.backgroundBlack.ignoresSafeArea()
                 
-                headerArea
-                
-                Spacer()
-                
-                ZStack {
-                    currentStepView
-                    if let step = incomingStep {
-                        stepView(for: step)
-                            .offset(x: incomingOffset)
+                VStack(spacing: 20) {
+                    Spacer()
+                    
+                    headerArea
+                    
+                    Spacer()
+                    
+                    ZStack {
+                        currentStepView
+                        if let step = incomingStep {
+                            stepView(for: step)
+                                .offset(x: incomingOffset)
+                        }
                     }
+                    .frame(height: 300)
+                    
+                    Spacer()
+                    
+                    CustomButton(
+                        title: "다음",
+                        size: .large,
+                        backgroundColor: viewModel.isNextEnabled ? Color.accent : Color.interactionInactive,
+                        foregroundColor: .interactionDisable,
+                        borderColor: nil,
+                        action: {
+                            handleNext()
+                        }
+                    )
+                    .disabled(!viewModel.isNextEnabled)
+                    
+                    Spacer()
                 }
-                .frame(height: 300)
+                .padding()
                 
-                Spacer()
-                
-                CustomButton(
-                    title: "다음",
-                    size: .large,
-                    backgroundColor: viewModel.isNextEnabled ? Color.accent : Color.interactionInactive,
-                    foregroundColor: .interactionDisable,
-                    borderColor: nil,
-                    action: {
-                        handleNext()
-                    }
-                )
-                .disabled(!viewModel.isNextEnabled)
-                
-                Spacer()
+                NavigationLink(
+                    destination: WorksoutView(),
+                    isActive: $navigateToWorksout
+                ) {
+                    EmptyView()
+                }
+                .hidden()
             }
-            .padding()
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     private var headerArea: some View {
         Group {
             switch viewModel.currentStep {
             case .nickname:
-                HeaderTextView(title: "닉네임을 입력해주세요.", subTitle: nil)
+                HeaderTextView(title: "닉네임을 입력해주세요.", subTitle: "어떻게 불러드릴까요?")
             case .gender:
                 HeaderTextView(title: "성별을 선택해주세요.", subTitle: nil)
             case .age:
@@ -58,6 +70,7 @@ struct UserInfoView: View {
                 HeaderTextView(title: "설정이 완료되었습니다!", subTitle: nil)
             }
         }
+        
     }
     
     // 현재 단계의 콘텐츠 (고정)
@@ -87,6 +100,13 @@ struct UserInfoView: View {
     
     private func handleNext() {
         guard viewModel.isNextEnabled else { return }
+        
+        // 만약 이미 complete 단계라면, WorksoutView로 이동하도록 설정
+        if viewModel.currentStep == .complete {
+            navigateToWorksout = true
+            return
+        }
+        
         let nextStep: UserInfoViewModel.Step
         switch viewModel.currentStep {
         case .nickname: nextStep = .gender

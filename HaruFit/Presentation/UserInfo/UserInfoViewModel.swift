@@ -65,7 +65,7 @@ final class UserInfoViewModel: ObservableObject {
         case .age:
             return userSessionUseCase.validateAgeGroup(ageGroup)
         case .complete:
-            return false
+            return true
         }
     }
     

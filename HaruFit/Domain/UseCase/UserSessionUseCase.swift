@@ -18,7 +18,6 @@ protocol UserSessionUseCase {
     func logout()
     func currentSession() -> UserSession?
     
-    // 입력 유효성 검사 메서드들
     func validateNickname(_ nickname: String) -> Bool
     func validateGender(_ gender: String) -> Bool
     func validateAgeGroup(_ ageGroup: String) -> Bool
@@ -58,7 +57,6 @@ class DefaultUserSessionUseCase: UserSessionUseCase {
         repository.load()
     }
     
-    // 입력 유효성 검사
     func validateNickname(_ nickname: String) -> Bool {
         return nickname.count >= 2
     }
