@@ -24,8 +24,23 @@ final class DIContainer {
         DefaultUserSessionUseCase(repository: userSessionRepository)
     }()
     
+    lazy var fetchTodayRecordsUseCase: FetchTodayRecordsUseCase = {
+        DefaultFetchTodayRecordsUseCase(repository: workoutRepository)
+    }()
+    
+    lazy var addRecordUseCase: AddRecordUseCase = {
+        DefaultAddRecordUseCase(repository: workoutRepository)
+    }()
+    
     // MARK: - View Model
     func makeUserInfoViewModel() -> UserInfoViewModel {
         UserInfoViewModel(userSessionUseCase: userSessionUseCase)
+    }
+    
+    func makeWorksoutViewModel() -> WorksoutViewModel {
+        WorksoutViewModel(
+            fetchTodayRecordsUseCase: fetchTodayRecordsUseCase,
+            addRecordUseCase: addRecordUseCase
+        )
     }
 }
