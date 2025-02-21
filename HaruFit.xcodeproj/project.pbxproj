@@ -181,7 +181,6 @@
 		03FC07A12D52F2DD00EBF374 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				03FC07B12D5336D700EBF374 /* Running */,
 				03FC07B02D5336CB00EBF374 /* WeightTraining */,
 			);
 			path = View;
@@ -190,7 +189,6 @@
 		03FC07A22D52F2E100EBF374 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				03FC07B22D5336E400EBF374 /* Running */,
 				03FC07B32D5336E900EBF374 /* WeightTraining */,
 			);
 			path = ViewModel;
@@ -227,20 +225,6 @@
 			children = (
 			);
 			path = WeightTraining;
-			sourceTree = "<group>";
-		};
-		03FC07B12D5336D700EBF374 /* Running */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Running;
-			sourceTree = "<group>";
-		};
-		03FC07B22D5336E400EBF374 /* Running */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Running;
 			sourceTree = "<group>";
 		};
 		03FC07B32D5336E900EBF374 /* WeightTraining */ = {

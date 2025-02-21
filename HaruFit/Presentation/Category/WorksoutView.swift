@@ -127,7 +127,6 @@ struct WorksoutView: View {
         )
     }
 
-    // 운동 타입 버튼
     private func workoutButton(title: String, type: WorkoutType) -> some View {
         Button {
             viewModel.selectedWorkout = type
