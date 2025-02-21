@@ -13,7 +13,7 @@ struct HaruFitApp: App {
     
     var body: some Scene {
         WindowGroup {
-            UserInfoView(viewModel: container.makeUserInfoViewModel())
+            RouteTabView()
         }
     }
 }

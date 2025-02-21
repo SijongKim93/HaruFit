@@ -98,32 +98,23 @@ struct WorksoutView: View {
         .overlay(
             Group {
                 if showExersiseInput {
-                    ZStack(alignment: .bottom) {
-                        Color.backgroundBlack.opacity(0.4)
-                            .ignoresSafeArea() // 배경 dim 처리
-                            .onTapGesture {
-                                withAnimation {
-                                    showExersiseInput = false
-                                }
-                            }
-
-                        ExerciseInputView { selectedExercise in
-                            if !selectedExercise.isEmpty {
-                                viewModel.addRecord(exerciseName: selectedExercise)
-                            }
-                            withAnimation {
-                                showExersiseInput = false
-                            }
+                    ExerciseInputView { selectedExercise in
+                        if !selectedExercise.isEmpty {
+                            viewModel.addRecord(exerciseName: selectedExercise)
                         }
-                        .frame(maxWidth: .infinity)
-                        .frame(height: UIScreen.main.bounds.height * 0.80)
-                        .background(Color.backgroundGray)
-                        .cornerRadius(20, corners: [.topLeft, .topRight])
-                        .transition(.move(edge: .bottom))
+                        withAnimation(.easeInOut) {
+                            showExersiseInput = false
+                        }
                     }
+                    .frame(maxWidth: .infinity)
+                    .frame(height: UIScreen.main.bounds.height * 0.80)
+                    .background(Color.backgroundGray)
+                    .cornerRadius(20, corners: [.topLeft, .topRight])
+                    .transition(.move(edge: .bottom))
                     .animation(.easeInOut, value: showExersiseInput)
                 }
-            }
+            },
+            alignment: .bottom
         )
     }
 
