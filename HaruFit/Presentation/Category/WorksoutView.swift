@@ -20,7 +20,7 @@ struct WorksoutView: View {
                 // 상단 고정 헤더
                 HeaderView()
 
-                ScrollView {
+                ScrollView(.vertical, showsIndicators: false) {
                     VStack(alignment: .leading, spacing: 0) {
                         HCalendarView(viewModel: HCalendarViewModel())
                             .padding(.vertical, 10)
