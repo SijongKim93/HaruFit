@@ -285,7 +285,6 @@
 			isa = PBXGroup;
 			children = (
 				03FC07A12D52F2DD00EBF374 /* View */,
-				4DF724C82D5E21CD00937E7E /* Collect */,
 				03FC07A22D52F2E100EBF374 /* ViewModel */,
 				4D8D3ADA2D579383009D61AD /* ExerciseInputView.swift */,
 			);
@@ -395,6 +394,7 @@
 				035C26EF2D2E527C00BB20B8 /* RouteTab */,
 				4DF724D22D5F8C1000937E7E /* UserInfo */,
 				03FC07A72D52FEA700EBF374 /* Category */,
+				4DF724C82D5E21CD00937E7E /* Collect */,
 				4D8D3AC52D4917D3009D61AD /* Exercise */,
 			);
 			path = Presentation;

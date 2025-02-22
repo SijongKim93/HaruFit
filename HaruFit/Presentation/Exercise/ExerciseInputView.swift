@@ -10,75 +10,67 @@ import SwiftUI
 struct ExerciseInputView: View {
     var onSelectExercise: (String) -> Void
     
+    // 예시: 각 부위별 더미 운동 목록
+    let exercisesByBodyPart: [BodyPart: [String]] = [
+        .back: ["풀업", "친업", "랫 풀다운"],
+        .chest: ["벤치프레스", "푸쉬업", "딥스"],
+        .shoulder: ["숄더프레스", "사이드레터럴"],
+        .lowerBody: ["스쿼트", "런지", "레그프레스"],
+        .fullBody: ["버피", "마운틴클라이머"],
+        .core: ["플랭크", "크런치", "레그레이즈"]
+    ]
+    
+    @State private var selectedBodyPart: BodyPart = .back
+    
     var body: some View {
         VStack(spacing: 20) {
             Text("운동 선택")
                 .h1()
                 .padding()
+                .foregroundColor(Color.interactionDisable)
             
-            ScrollView {
-                VStack(spacing: 15) {
-                    Group {
-                        Text("상체 운동")
-                            .font(.subheadline)
-                            .bold()
-                        HStack(spacing: 15) {
-                            Button("벤치 프레스") {
-                                onSelectExercise("벤치 프레스")
-                            }
-                            .buttonStyle(ExerciseButtonStyle())
-                            
-                            Button("푸쉬업") {
-                                onSelectExercise("푸쉬업")
-                            }
-                            .buttonStyle(ExerciseButtonStyle())
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 12) {
+                    ForEach(BodyPart.allCases, id: \.self) { part in
+                        Button(action: {
+                            selectedBodyPart = part
+                        }) {
+                            Text(part.title)
+                                .b1()
+                                .padding(8)
+                                .background(selectedBodyPart == part ? Color.accent : Color.gray.opacity(0.3))
+                                .cornerRadius(8)
+                                .foregroundColor(.white)
                         }
+                        .frame(maxWidth: .infinity)
                     }
-                    Group {
-                        Text("하체 운동")
-                            .font(.subheadline)
-                            .bold()
-                        HStack(spacing: 15) {
-                            Button("스쿼트") {
-                                onSelectExercise("스쿼트")
-                            }
-                            .buttonStyle(ExerciseButtonStyle())
-                            
-                            Button("런지") {
-                                onSelectExercise("런지")
-                            }
-                            .buttonStyle(ExerciseButtonStyle())
-                        }
-                    }
-                    Group {
-                        Text("코어 운동")
-                            .font(.subheadline)
-                            .bold()
-                        HStack(spacing: 15) {
-                            Button("플랭크") {
-                                onSelectExercise("플랭크")
-                            }
-                            .buttonStyle(ExerciseButtonStyle())
-                            
-                            Button("크런치") {
-                                onSelectExercise("크런치")
-                            }
-                            .buttonStyle(ExerciseButtonStyle())
+                }
+                .padding(.horizontal)
+            }
+            
+            if let exercises = exercisesByBodyPart[selectedBodyPart] {
+                LazyVGrid(columns: [
+                    GridItem(.flexible()),
+                    GridItem(.flexible())
+                ], spacing: 16) {
+                    ForEach(exercises, id: \.self) { exercise in
+                        Button(action: {
+                            onSelectExercise(exercise)
+                        }) {
+                            Text(exercise)
+                                .font(.body)
+                                .padding()
+                                .frame(maxWidth: .infinity)
+                                .background(Color.backgroundGray.opacity(0.5))
+                                .cornerRadius(12)
+                                .foregroundColor(.interactionDisable)
                         }
                     }
                 }
-                .padding()
+                .padding(.horizontal)
             }
+            
+            Spacer()
         }
-    }
-}
-
-struct ExerciseButtonStyle: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .padding()
-            .background(Color.backgroundGray.opacity(configuration.isPressed ? 0.7 : 1.0))
-            .cornerRadius(8)
-            .foregroundColor(.primary)
     }
 }
