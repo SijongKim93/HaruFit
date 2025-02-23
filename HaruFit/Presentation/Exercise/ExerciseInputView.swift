@@ -23,54 +23,59 @@ struct ExerciseInputView: View {
     @State private var selectedBodyPart: BodyPart = .back
     
     var body: some View {
-        VStack(spacing: 20) {
-            Text("운동 선택")
-                .h1()
-                .padding()
-                .foregroundColor(Color.interactionDisable)
+        ZStack {
+            Color.backgroundBlack
+                .ignoresSafeArea()
             
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 12) {
-                    ForEach(BodyPart.allCases, id: \.self) { part in
-                        Button(action: {
-                            selectedBodyPart = part
-                        }) {
-                            Text(part.title)
-                                .b1()
-                                .padding(8)
-                                .background(selectedBodyPart == part ? Color.accent : Color.gray.opacity(0.3))
-                                .cornerRadius(8)
-                                .foregroundColor(.white)
-                        }
-                        .frame(maxWidth: .infinity)
-                    }
-                }
-                .padding(.horizontal)
-            }
-            
-            if let exercises = exercisesByBodyPart[selectedBodyPart] {
-                LazyVGrid(columns: [
-                    GridItem(.flexible()),
-                    GridItem(.flexible())
-                ], spacing: 16) {
-                    ForEach(exercises, id: \.self) { exercise in
-                        Button(action: {
-                            onSelectExercise(exercise)
-                        }) {
-                            Text(exercise)
-                                .font(.body)
-                                .padding()
-                                .frame(maxWidth: .infinity)
-                                .background(Color.backgroundGray.opacity(0.5))
-                                .cornerRadius(12)
-                                .foregroundColor(.interactionDisable)
+            VStack(spacing: 20) {
+                Text("운동 선택")
+                    .h1()
+                    .padding()
+                    .foregroundColor(Color.interactionDisable)
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 12) {
+                        ForEach(BodyPart.allCases, id: \.self) { part in
+                            Button(action: {
+                                selectedBodyPart = part
+                            }) {
+                                Text(part.title)
+                                    .b1()
+                                    .padding()
+                                    .frame(maxWidth: .infinity)
+                                    .background(selectedBodyPart == part ? Color.accent : Color.gray.opacity(0.3))
+                                    .cornerRadius(8)
+                                    .foregroundColor(selectedBodyPart == part ? Color.interactionDisable : Color.interactionInactive)
+                            }
                         }
                     }
+                    .padding(.horizontal)
                 }
-                .padding(.horizontal)
+                
+                if let exercises = exercisesByBodyPart[selectedBodyPart] {
+                    LazyVGrid(columns: [
+                        GridItem(.flexible()),
+                        GridItem(.flexible())
+                    ], spacing: 16) {
+                        ForEach(exercises, id: \.self) { exercise in
+                            Button(action: {
+                                onSelectExercise(exercise)
+                            }) {
+                                Text(exercise)
+                                    .font(.body)
+                                    .padding()
+                                    .frame(maxWidth: .infinity)
+                                    .background(Color.backgroundGray.opacity(0.5))
+                                    .cornerRadius(12)
+                                    .foregroundColor(.interactionDisable)
+                            }
+                        }
+                    }
+                    .padding(.horizontal)
+                }
+                
+                Spacer()
             }
-            
-            Spacer()
         }
     }
 }

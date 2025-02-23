@@ -107,7 +107,7 @@ struct WorksoutView: View {
                         }
                     }
                     .frame(maxWidth: .infinity)
-                    .frame(height: UIScreen.main.bounds.height * 0.80)
+                    .frame(height: UIScreen.main.bounds.height * 0.7)
                     .background(Color.backgroundGray)
                     .cornerRadius(20, corners: [.topLeft, .topRight])
                     .transition(.move(edge: .bottom))
