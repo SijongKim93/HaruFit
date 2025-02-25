@@ -10,52 +10,51 @@ import SwiftUI
 struct WorksoutView: View {
     @StateObject private var viewModel: WorksoutViewModel = DIContainer.shared.makeWorksoutViewModel()
     @State private var showExersiseInput = false
-
+    
     var body: some View {
         ZStack {
             Color.backgroundBlack
                 .ignoresSafeArea()
-
+            
             VStack(alignment: .leading, spacing: 0) {
                 // 상단 고정 헤더
                 HeaderView()
-
+                
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack(alignment: .leading, spacing: 0) {
                         HCalendarView(viewModel: HCalendarViewModel())
                             .padding(.vertical, 10)
-
+                        
                         // 오늘의 운동
                         HStack(alignment: .bottom) {
                             HeaderTextView(
                                 title: "오늘의 운동",
                                 subTitle: nil
                             )
-
+                            
                             Spacer()
-
+                            
                             Text(Date().formattedKoreanString)
                                 .b1()
                                 .foregroundColor(.interactionInactive)
                         }
                         .padding(.bottom, 10)
                         .padding(.horizontal)
-
-                        // 운동 선택(웨이트/런닝 등)
+                        
                         HStack(spacing: 10) {
                             workoutButton(title: "웨이트 트레이닝", type: .weightTraining)
                             workoutButton(title: "런닝", type: .running)
                         }
                         .padding(.horizontal)
                         .padding(.bottom, 25)
-
+                        
                         // 운동 기록하기
                         HStack(alignment: .bottom) {
                             HeaderTextView(
                                 title: "운동 기록하기",
                                 subTitle: nil
                             )
-
+                            
                             Button {
                                 withAnimation {
                                     showExersiseInput = true
@@ -71,7 +70,7 @@ struct WorksoutView: View {
                         }
                         .padding(.horizontal)
                         .padding(.bottom, 10)
-
+                        
                         if viewModel.todayRecords.isEmpty {
                             ContentsCardView(
                                 icon: AppImages.WorkoutImage.weightTraining,
@@ -98,6 +97,22 @@ struct WorksoutView: View {
         .overlay(
             Group {
                 if showExersiseInput {
+                    Color.backgroundBlack.opacity(0.7)
+                        .ignoresSafeArea()
+                        .onTapGesture {
+                            withAnimation(.easeInOut) {
+                                showExersiseInput = false
+                            }
+                        }
+                        .transition(.opacity)
+                }
+            },
+            alignment: .bottom
+        )
+        .overlay(
+            Group {
+                if showExersiseInput {
+                    // 시트: 아래에서 위로 슬라이드 효과 적용
                     ExerciseInputView { selectedExercise in
                         if !selectedExercise.isEmpty {
                             viewModel.addRecord(exerciseName: selectedExercise)
@@ -107,28 +122,29 @@ struct WorksoutView: View {
                         }
                     }
                     .frame(maxWidth: .infinity)
-                    .frame(height: UIScreen.main.bounds.height * 0.7)
+                    .frame(height: UIScreen.main.bounds.height * 0.60)
                     .background(Color.backgroundGray)
                     .cornerRadius(20, corners: [.topLeft, .topRight])
+                    .shadow(color: Color.black.opacity(0.3), radius: 10, x: 0, y: -5)
                     .transition(.move(edge: .bottom))
-                    .animation(.easeInOut, value: showExersiseInput)
                 }
             },
             alignment: .bottom
         )
+        .animation(.easeInOut(duration: 0.3), value: showExersiseInput)
     }
-
+    
     private func workoutButton(title: String, type: WorkoutType) -> some View {
         Button {
             viewModel.selectedWorkout = type
         } label: {
             VStack(spacing: 20) {
                 Image(type == .weightTraining ? AppImages.WorkoutImage.weightTraining :
-                      AppImages.WorkoutImage.running)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(height: 60)
-
+                        AppImages.WorkoutImage.running)
+                .resizable()
+                .scaledToFit()
+                .frame(height: 60)
+                
                 Text(title)
                     .b1()
                     .foregroundColor(.interactionDisable)

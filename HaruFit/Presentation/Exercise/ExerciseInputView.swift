@@ -9,17 +9,6 @@ import SwiftUI
 
 struct ExerciseInputView: View {
     var onSelectExercise: (String) -> Void
-    
-    // 예시: 각 부위별 더미 운동 목록
-    let exercisesByBodyPart: [BodyPart: [String]] = [
-        .back: ["풀업", "친업", "랫 풀다운"],
-        .chest: ["벤치프레스", "푸쉬업", "딥스"],
-        .shoulder: ["숄더프레스", "사이드레터럴"],
-        .lowerBody: ["스쿼트", "런지", "레그프레스"],
-        .fullBody: ["버피", "마운틴클라이머"],
-        .core: ["플랭크", "크런치", "레그레이즈"]
-    ]
-    
     @State private var selectedBodyPart: BodyPart = .back
     
     var body: some View {
@@ -27,11 +16,30 @@ struct ExerciseInputView: View {
             Color.backgroundBlack
                 .ignoresSafeArea()
             
-            VStack(spacing: 20) {
-                Text("운동 선택")
-                    .h1()
+            VStack(spacing: 12) {
+                HStack {
+                    HStack {
+                        Image("dumbell")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 50, height: 50)
+                        
+                        Text("운동 선택")
+                            .h1()
+                            .foregroundColor(Color.interactionDisable)
+                    }
                     .padding()
-                    .foregroundColor(Color.interactionDisable)
+                    
+                    Spacer()
+                    
+                    Button {
+                        onSelectExercise("")
+                    } label: {
+                        Image(systemName: "xmark")
+                            .foregroundColor(Color.interactionDisable)
+                    }
+                    .padding()
+                }
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 12) {
@@ -49,20 +57,21 @@ struct ExerciseInputView: View {
                             }
                         }
                     }
+                    .padding(.top, 10)
                     .padding(.horizontal)
                 }
-                
-                if let exercises = exercisesByBodyPart[selectedBodyPart] {
+            
+                ScrollView(showsIndicators: false) {
                     LazyVGrid(columns: [
                         GridItem(.flexible()),
                         GridItem(.flexible())
                     ], spacing: 16) {
-                        ForEach(exercises, id: \.self) { exercise in
+                        ForEach(ExerciseResource.exercises(for: selectedBodyPart), id: \.self) { exercise in
                             Button(action: {
                                 onSelectExercise(exercise)
                             }) {
                                 Text(exercise)
-                                    .font(.body)
+                                    .b1()
                                     .padding()
                                     .frame(maxWidth: .infinity)
                                     .background(Color.backgroundGray.opacity(0.5))
@@ -71,10 +80,8 @@ struct ExerciseInputView: View {
                             }
                         }
                     }
-                    .padding(.horizontal)
                 }
-                
-                Spacer()
+                .padding(.horizontal)
             }
         }
     }

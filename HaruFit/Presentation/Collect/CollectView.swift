@@ -15,8 +15,6 @@ struct CollectView: View {
     
     var body: some View {
         VStack {
-            HeaderView()
-            
             ScrollView {
                 VStack {
                     Text("🏆 Collection 🏆")
