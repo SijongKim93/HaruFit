@@ -13,20 +13,11 @@ class HCalendarViewModel: ObservableObject {
 
     private var cancellables: Set<AnyCancellable> = []
 
-    init() {
-
-    }
-
     func setDummyData() {
         let today = Date().startOfDay
         let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: today)!
         let twoDaysAgo = Calendar.current.date(byAdding: .day, value: -2, to: today)!
 
-        self.dailyDataCount = [
-            today : 2,
-            yesterday : 1,
-            twoDaysAgo : 0
-        ]
+        self.dailyDataCount = [today : 2, yesterday : 1, twoDaysAgo : 0]
     }
 }
-

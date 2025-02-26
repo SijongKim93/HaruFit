@@ -55,6 +55,7 @@
 		4DC95A2B2D2D6FAF006195E4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DC95A2A2D2D6FAF006195E4 /* Preview Assets.xcassets */; };
 		4DC95A322D2D7117006195E4 /* .swiftformat in Resources */ = {isa = PBXBuildFile; fileRef = 4DC95A312D2D7117006195E4 /* .swiftformat */; };
 		4DC95A342D2D711F006195E4 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 4DC95A332D2D711E006195E4 /* .swiftlint.yml */; };
+		4DE755FE2D6F4A2500A9FB2E /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE755FD2D6F4A2500A9FB2E /* NoDataView.swift */; };
 		4DF724E12D5F929D00937E7E /* SingleLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF724E02D5F929D00937E7E /* SingleLineTextField.swift */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +105,7 @@
 		4DC95A2A2D2D6FAF006195E4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4DC95A312D2D7117006195E4 /* .swiftformat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftformat; sourceTree = SOURCE_ROOT; };
 		4DC95A332D2D711E006195E4 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
+		4DE755FD2D6F4A2500A9FB2E /* NoDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
 		4DF724E02D5F929D00937E7E /* SingleLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleLineTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,6 +148,7 @@
 				035C26E62D2E107600BB20B8 /* CustomButton.swift */,
 				4DF724E02D5F929D00937E7E /* SingleLineTextField.swift */,
 				4D8D3ABC2D451D7C009D61AD /* HeaderView.swift */,
+				4DE755FD2D6F4A2500A9FB2E /* NoDataView.swift */,
 				03FC07A32D52F6DE00EBF374 /* ContentsCardView.swift */,
 				03FC07A52D52F9E800EBF374 /* HeaderTextView.swift */,
 			);
@@ -561,6 +564,7 @@
 				035C26F32D2E54EA00BB20B8 /* TabItems.swift in Sources */,
 				4D8D3ABF2D490EE1009D61AD /* Exercise.swift in Sources */,
 				4D8D3A8A2D315460009D61AD /* WorkoutRecordRepository.swift in Sources */,
+				4DE755FE2D6F4A2500A9FB2E /* NoDataView.swift in Sources */,
 				03FC07A62D52F9E800EBF374 /* HeaderTextView.swift in Sources */,
 				4DC95A242D2D6FAE006195E4 /* HaruFitApp.swift in Sources */,
 				03FC07AC2D5308A500EBF374 /* HCalendarView.swift in Sources */,
