@@ -17,7 +17,6 @@ struct WorksoutView: View {
                 .ignoresSafeArea()
             
             VStack(alignment: .leading, spacing: 0) {
-                // 상단 고정 헤더
                 HeaderView()
                 
                 ScrollView(.vertical, showsIndicators: false) {
@@ -25,7 +24,6 @@ struct WorksoutView: View {
                         HCalendarView(viewModel: HCalendarViewModel())
                             .padding(.vertical, 10)
                         
-                        // 오늘의 운동
                         HStack(alignment: .bottom) {
                             HeaderTextView(
                                 title: "오늘의 운동",
@@ -72,12 +70,8 @@ struct WorksoutView: View {
                         .padding(.bottom, 10)
                         
                         if viewModel.todayRecords.isEmpty {
-                            ContentsCardView(
-                                icon: AppImages.WorkoutImage.weightTraining,
-                                mainTitle: "아직 등록된 운동이 없어요.",
-                                subTitle: "우측 상단을 눌러 추가해주세요."
-                            )
-                            .padding(.horizontal)
+                            NoDataView()
+                                .padding(.horizontal)
                         } else {
                             ForEach(viewModel.todayRecords) { record in
                                 ContentsCardView(
@@ -112,7 +106,6 @@ struct WorksoutView: View {
         .overlay(
             Group {
                 if showExersiseInput {
-                    // 시트: 아래에서 위로 슬라이드 효과 적용
                     ExerciseInputView { selectedExercise in
                         if !selectedExercise.isEmpty {
                             viewModel.addRecord(exerciseName: selectedExercise)

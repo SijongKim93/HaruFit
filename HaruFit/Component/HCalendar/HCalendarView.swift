@@ -48,7 +48,6 @@ struct HCalendarView: View {
 
                         Spacer()
 
-                        // 운동 기록 있으면 이미지
                         if let count = viewModel.dailyDataCount[date], count > 0 {
                             Image(systemName: "checkmark.seal.fill")
                                 .resizable()

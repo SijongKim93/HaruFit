@@ -81,6 +81,7 @@ struct ExerciseInputView: View {
                         }
                     }
                 }
+                .padding(.top, 10)
                 .padding(.horizontal)
             }
         }

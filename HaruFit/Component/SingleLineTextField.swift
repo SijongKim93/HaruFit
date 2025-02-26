@@ -9,16 +9,12 @@ import SwiftUI
 
 struct SingleLineTextField: View {
     @Binding var text: String
-    
-    // 포커스 상태를 추적
     @FocusState private var isFocused: Bool
     
-    // placeholder
     let placeholder: String
     
     var body: some View {
         VStack(spacing: 12) {
-            // 실제 텍스트필드
             TextField("", text: $text)
                 .h1()
                 .focused($isFocused)
@@ -26,7 +22,6 @@ struct SingleLineTextField: View {
                 .textFieldStyle(.plain)
                 .frame(height: 30)
                 .overlay(
-                    // Placeholder 직접 구현
                     Group {
                         if text.isEmpty {
                             Text(placeholder)
@@ -37,14 +32,12 @@ struct SingleLineTextField: View {
                     }
                 , alignment: .leading)
             
-            // 밑줄 (height: 1)
             Rectangle()
                 .fill(isFocused ? Color.interactionDisable : Color.interactionInactive)
-                .frame(height: 1)
+                .frame(height: 2)
         }
-        .contentShape(Rectangle()) // 탭 영역
+        .contentShape(Rectangle())
         .onTapGesture {
-            // 탭 시 포커스
             isFocused = true
         }
     }
@@ -52,7 +45,6 @@ struct SingleLineTextField: View {
 
 struct SingleLineTextField_Previews: PreviewProvider {
     static var previews: some View {
-        // 예: 테스트용
         SingleLineTextField(
             text: .constant(""),
             placeholder: "닉네임 입력 ( 2자 이상 )"

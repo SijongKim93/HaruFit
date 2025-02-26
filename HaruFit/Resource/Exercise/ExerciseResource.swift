@@ -6,7 +6,6 @@
 import Foundation
 
 struct ExerciseResource {
-    /// 각 BodyPart에 속하는 운동 '이름' 만을 미리 정의 (설명 없이)
     static let exerciseDictionary: [BodyPart: [String]] = [
         .back: [
             "풀업",
@@ -124,7 +123,6 @@ struct ExerciseResource {
         ]
     ]
     
-    /// 특정 BodyPart에 해당하는 '운동 이름' 리스트 반환
     static func exercises(for bodyPart: BodyPart) -> [String] {
         exerciseDictionary[bodyPart] ?? []
     }

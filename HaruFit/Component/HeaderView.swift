@@ -12,8 +12,6 @@ struct HeaderView: View {
     @AppStorage("nickname") private var storedNickname: String?
     @AppStorage("profileImageBase64") private var storedProfileImageBase64: String?
     
-    //let onSettingsTapped: () -> Void
-    
     var body: some View {
         ZStack {
             Color.backgroundBlack
