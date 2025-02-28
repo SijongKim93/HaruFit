@@ -56,6 +56,7 @@
 		4DC95A322D2D7117006195E4 /* .swiftformat in Resources */ = {isa = PBXBuildFile; fileRef = 4DC95A312D2D7117006195E4 /* .swiftformat */; };
 		4DC95A342D2D711F006195E4 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 4DC95A332D2D711E006195E4 /* .swiftlint.yml */; };
 		4DE755FE2D6F4A2500A9FB2E /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE755FD2D6F4A2500A9FB2E /* NoDataView.swift */; };
+		4DE756002D72833D00A9FB2E /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE755FF2D72833D00A9FB2E /* Achievement.swift */; };
 		4DF724E12D5F929D00937E7E /* SingleLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF724E02D5F929D00937E7E /* SingleLineTextField.swift */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +107,7 @@
 		4DC95A312D2D7117006195E4 /* .swiftformat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftformat; sourceTree = SOURCE_ROOT; };
 		4DC95A332D2D711E006195E4 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		4DE755FD2D6F4A2500A9FB2E /* NoDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
+		4DE755FF2D72833D00A9FB2E /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 		4DF724E02D5F929D00937E7E /* SingleLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleLineTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -376,6 +378,7 @@
 			children = (
 				4D8D3A792D2EBD86009D61AD /* Entity */,
 				4D8D3AB62D428E36009D61AD /* UserSession.swift */,
+				4DE755FF2D72833D00A9FB2E /* Achievement.swift */,
 				4D8D3A7A2D2EBD8F009D61AD /* UseCase */,
 			);
 			path = Domain;
@@ -550,6 +553,7 @@
 				035C26E72D2E107600BB20B8 /* CustomButton.swift in Sources */,
 				03FC07BE2D533F0300EBF374 /* AddRecordUseCase.swift in Sources */,
 				4D8D3ABD2D451D7C009D61AD /* HeaderView.swift in Sources */,
+				4DE756002D72833D00A9FB2E /* Achievement.swift in Sources */,
 				03FC07AF2D5309D100EBF374 /* Date+Extension.swift in Sources */,
 				03FC07C02D533FD200EBF374 /* WorksoutViewModel.swift in Sources */,
 				4D8D3ABB2D428FED009D61AD /* UserSessionRepository.swift in Sources */,
