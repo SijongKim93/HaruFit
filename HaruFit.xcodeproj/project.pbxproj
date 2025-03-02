@@ -57,6 +57,7 @@
 		4DC95A342D2D711F006195E4 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 4DC95A332D2D711E006195E4 /* .swiftlint.yml */; };
 		4DE755FE2D6F4A2500A9FB2E /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE755FD2D6F4A2500A9FB2E /* NoDataView.swift */; };
 		4DE756002D72833D00A9FB2E /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE755FF2D72833D00A9FB2E /* Achievement.swift */; };
+		4DE756082D7468F400A9FB2E /* AchievementUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE756072D7468F400A9FB2E /* AchievementUseCase.swift */; };
 		4DF724E12D5F929D00937E7E /* SingleLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF724E02D5F929D00937E7E /* SingleLineTextField.swift */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +109,7 @@
 		4DC95A332D2D711E006195E4 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		4DE755FD2D6F4A2500A9FB2E /* NoDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
 		4DE755FF2D72833D00A9FB2E /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
+		4DE756072D7468F400A9FB2E /* AchievementUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementUseCase.swift; sourceTree = "<group>"; };
 		4DF724E02D5F929D00937E7E /* SingleLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleLineTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -183,22 +185,6 @@
 			path = Configuration;
 			sourceTree = "<group>";
 		};
-		03FC07A12D52F2DD00EBF374 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				03FC07B02D5336CB00EBF374 /* WeightTraining */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		03FC07A22D52F2E100EBF374 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				03FC07B32D5336E900EBF374 /* WeightTraining */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		03FC07A72D52FEA700EBF374 /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,20 +211,6 @@
 			path = Date;
 			sourceTree = "<group>";
 		};
-		03FC07B02D5336CB00EBF374 /* WeightTraining */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = WeightTraining;
-			sourceTree = "<group>";
-		};
-		03FC07B32D5336E900EBF374 /* WeightTraining */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = WeightTraining;
-			sourceTree = "<group>";
-		};
 		03FC07B42D533C4600EBF374 /* Dependency */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				4D8D3AB82D428EBC009D61AD /* UserSessionUseCase.swift */,
+				4DE756072D7468F400A9FB2E /* AchievementUseCase.swift */,
 				4D8D3AC02D4913D8009D61AD /* ExerciseUseCase.swift */,
 				03FC07BB2D533E6600EBF374 /* FetchTodayRecordsUseCase.swift */,
 				03FC07BD2D533F0300EBF374 /* AddRecordUseCase.swift */,
@@ -289,8 +262,6 @@
 		4D8D3AC52D4917D3009D61AD /* Exercise */ = {
 			isa = PBXGroup;
 			children = (
-				03FC07A12D52F2DD00EBF374 /* View */,
-				03FC07A22D52F2E100EBF374 /* ViewModel */,
 				4D8D3ADA2D579383009D61AD /* ExerciseInputView.swift */,
 			);
 			path = Exercise;
@@ -547,6 +518,7 @@
 				03FC07B62D533C5C00EBF374 /* DIContainer.swift in Sources */,
 				4D8D3AC12D4913D8009D61AD /* ExerciseUseCase.swift in Sources */,
 				035C26EE2D2E4AC800BB20B8 /* AppImages.swift in Sources */,
+				4DE756082D7468F400A9FB2E /* AchievementUseCase.swift in Sources */,
 				4D8D3AB02D412D44009D61AD /* ExerciseResource.swift in Sources */,
 				035C26F12D2E529300BB20B8 /* RouteTabView.swift in Sources */,
 				4D8D3A882D31520C009D61AD /* Workout.swift in Sources */,
