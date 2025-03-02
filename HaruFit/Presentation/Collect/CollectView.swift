@@ -17,7 +17,7 @@ struct CollectView: View {
         VStack {
             ScrollView {
                 VStack {
-                    Text("🏆 Collection 🏆")
+                    Text("Collection")
                         .largeH1()
                         .padding()
                         .foregroundColor(.interactionDisable)
