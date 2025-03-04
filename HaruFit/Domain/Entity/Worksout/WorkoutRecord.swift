@@ -6,10 +6,18 @@
 //
 
 import Foundation
+import SwiftData
 
-struct WorkoutRecord: Identifiable, Hashable {
-    let id = UUID()
-    let date: Date
-    let workoutType: WorkoutType
-    let exerciseName: String
+@Model
+final class WorkoutRecord {
+    var id: UUID = UUID()
+    var date: Date
+    var workoutType: String
+    var exerciseName: String
+
+    init(date: Date, workoutType: String, exerciseName: String) {
+        self.date = date
+        self.workoutType = workoutType
+        self.exerciseName = exerciseName
+    }
 }
