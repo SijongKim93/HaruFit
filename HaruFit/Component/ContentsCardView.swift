@@ -11,6 +11,7 @@ struct ContentsCardView: View {
     let icon: String
     let mainTitle: String
     let subTitle: String
+    let onButtonTap: () -> Void
 
     var body: some View {
         ZStack {
@@ -34,6 +35,14 @@ struct ContentsCardView: View {
                 }
 
                 Spacer()
+
+                Button(action: onButtonTap) {
+                    Image(systemName: "xmark")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 20, height: 20)
+                        .foregroundColor(.interactionInactive)
+                }
             }
             .padding()
         }
@@ -41,5 +50,10 @@ struct ContentsCardView: View {
 }
 
 #Preview {
-    ContentsCardView(icon: AppImages.WorkoutImage.weightTraining, mainTitle: "벤치프레스", subTitle: "3세트 12회")
+    ContentsCardView(
+        icon: AppImages.WorkoutImage.weightTraining,
+        mainTitle: "벤치프레스",
+        subTitle: "3세트 12회",
+        onButtonTap: { print("Custom button action") }
+    )
 }

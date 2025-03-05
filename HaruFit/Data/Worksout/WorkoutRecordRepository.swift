@@ -4,6 +4,7 @@ import Foundation
 protocol WorkoutRecordRepository {
     func getRecords(for date: Date) async -> [WorkoutRecord]
     func addRecord(_ record: WorkoutRecord) async
+    func deleteRecord(_ record: WorkoutRecord) async
 }
 
 @MainActor
@@ -41,6 +42,16 @@ final class SwiftDataWorkoutRepository: WorkoutRecordRepository {
             try context.save()
         } catch {
             print("Error saving record: \(error)")
+        }
+    }
+
+    func deleteRecord(_ record: WorkoutRecord) async {
+        let context = modelContainer.mainContext
+        context.delete(record)
+        do {
+            try context.save()
+        } catch {
+            print("Error deleting record: \(error)")
         }
     }
 }

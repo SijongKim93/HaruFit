@@ -42,6 +42,10 @@ final class DIContainer {
         DefaultAddWorkRecordUseCase(repsoitory: workoutRecordRepository)
     }()
 
+    lazy var deleteWorkoutRecordUseCase: DeleteWorkoutRecordUseCase = {
+        DefaultDeleteWorkoutRecordUseCase(repository: workoutRecordRepository)
+    }()
+
     // MARK: - View Model
     func makeUserInfoViewModel() -> UserInfoViewModel {
         UserInfoViewModel(userSessionUseCase: userSessionUseCase)
@@ -50,7 +54,8 @@ final class DIContainer {
     func makeWorksoutViewModel() -> WorksoutViewModel {
         WorksoutViewModel(
             fetchTodayRecordUseCase: fetchWorkoutRecordsUseCase,
-            addRecordUseCase: addWorkoutRecordUseCase
+            addRecordUseCase: addWorkoutRecordUseCase,
+            deleteRecordUseCase: deleteWorkoutRecordUseCase
         )
     }
 }

@@ -15,10 +15,12 @@ final class WorksoutViewModel: ObservableObject {
 
     private let fetchTodayRecordUseCase: FetchWorkoutRecordUseCase
     private let addRecordUseCase: AddWorkRecordUseCase
+    private let deleteRecordUseCase: DeleteWorkoutRecordUseCase
 
-    init(fetchTodayRecordUseCase: FetchWorkoutRecordUseCase, addRecordUseCase: AddWorkRecordUseCase) {
+    init(fetchTodayRecordUseCase: FetchWorkoutRecordUseCase, addRecordUseCase: AddWorkRecordUseCase, deleteRecordUseCase: DeleteWorkoutRecordUseCase) {
         self.fetchTodayRecordUseCase = fetchTodayRecordUseCase
         self.addRecordUseCase = addRecordUseCase
+        self.deleteRecordUseCase = deleteRecordUseCase
     }
 
     func loadTodayRecords() {
@@ -36,6 +38,13 @@ final class WorksoutViewModel: ObservableObject {
                 exerciseName: exerciseName
             )
             await addRecordUseCase.execute(workRecord: record)
+            loadTodayRecords()
+        }
+    }
+
+    func deleteRecord(record: WorkoutRecord) {
+        Task {
+            await deleteRecordUseCase.execute(workRecord: record)
             loadTodayRecords()
         }
     }

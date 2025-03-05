@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SwiftData
 
 @main
 struct HaruFitApp: App {
@@ -14,7 +13,7 @@ struct HaruFitApp: App {
 
     var body: some Scene {
         WindowGroup {
-            RouteTabView()
+            UserInfoView(viewModel: container.makeUserInfoViewModel())
                 .modelContainer(container.modelContainer)
         }
     }
