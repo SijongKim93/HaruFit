@@ -88,6 +88,9 @@ struct WorksoutView: View {
                 }
             }
         }
+        .onAppear {
+            viewModel.loadTodayRecords()
+        }
         .overlay(
             Group {
                 if showExersiseInput {

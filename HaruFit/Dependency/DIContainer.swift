@@ -6,41 +6,51 @@
 //
 
 import SwiftUI
+import SwiftData
 
+@MainActor
 final class DIContainer {
     static let shared = DIContainer()
 
-    // MARK: - Data
-    lazy var workoutRepository: WorkoutRecordRepository = {
-        return InMemoryWorkoutRepository()
+    lazy var modelContainer: ModelContainer = {
+        do {
+            return try ModelContainer(for: WorkoutRecord.self)
+        } catch {
+            fatalError("Could not create ModelContainer")
+        }
     }()
-    
+
+    // MARK: - Data    
     lazy var userSessionRepository: UserSessionRepository = {
         return AppStorageUserSessionRepository()
+    }()
+
+    lazy var workoutRecordRepository: WorkoutRecordRepository = {
+        return SwiftDataWorkoutRepository(modelContainer: modelContainer)
     }()
 
     // MARK: - Use Cases
     lazy var userSessionUseCase: UserSessionUseCase = {
         DefaultUserSessionUseCase(repository: userSessionRepository)
     }()
-    
-    lazy var fetchTodayRecordsUseCase: FetchTodayRecordsUseCase = {
-        DefaultFetchTodayRecordsUseCase(repository: workoutRepository)
+
+    lazy var fetchWorkoutRecordsUseCase: FetchWorkoutRecordUseCase = {
+        DefaultFetchWorkoutRecordUseCase(repository: workoutRecordRepository)
     }()
-    
-    lazy var addRecordUseCase: AddRecordUseCase = {
-        DefaultAddRecordUseCase(repository: workoutRepository)
+
+    lazy var addWorkoutRecordUseCase: AddWorkRecordUseCase = {
+        DefaultAddWorkRecordUseCase(repsoitory: workoutRecordRepository)
     }()
-    
+
     // MARK: - View Model
     func makeUserInfoViewModel() -> UserInfoViewModel {
         UserInfoViewModel(userSessionUseCase: userSessionUseCase)
     }
-    
+
     func makeWorksoutViewModel() -> WorksoutViewModel {
         WorksoutViewModel(
-            fetchTodayRecordsUseCase: fetchTodayRecordsUseCase,
-            addRecordUseCase: addRecordUseCase
+            fetchTodayRecordUseCase: fetchWorkoutRecordsUseCase,
+            addRecordUseCase: addWorkoutRecordUseCase
         )
     }
 }

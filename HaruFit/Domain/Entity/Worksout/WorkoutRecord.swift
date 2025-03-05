@@ -10,7 +10,7 @@ import SwiftData
 
 @Model
 final class WorkoutRecord {
-    var id: UUID = UUID()
+    @Attribute(.unique) var id: UUID = UUID()
     var date: Date
     var workoutType: String
     var exerciseName: String

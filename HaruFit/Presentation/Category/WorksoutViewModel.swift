@@ -6,35 +6,37 @@
 //
 
 import SwiftUI
-import Combine
+import SwiftData
 
+@MainActor
 final class WorksoutViewModel: ObservableObject {
-    @Published var selectedWorkout: WorkoutType = .weightTraining
     @Published var todayRecords: [WorkoutRecord] = []
+    @Published var selectedWorkout: WorkoutType = .weightTraining
 
-    private let fetchTodayRecordsUseCase: FetchTodayRecordsUseCase
-    private let addRecordUseCase: AddRecordUseCase
-    private var cancellables: Set<AnyCancellable> = []
+    private let fetchTodayRecordUseCase: FetchWorkoutRecordUseCase
+    private let addRecordUseCase: AddWorkRecordUseCase
 
-    init(fetchTodayRecordsUseCase: FetchTodayRecordsUseCase, addRecordUseCase: AddRecordUseCase) {
-        self.fetchTodayRecordsUseCase = fetchTodayRecordsUseCase
+    init(fetchTodayRecordUseCase: FetchWorkoutRecordUseCase, addRecordUseCase: AddWorkRecordUseCase) {
+        self.fetchTodayRecordUseCase = fetchTodayRecordUseCase
         self.addRecordUseCase = addRecordUseCase
-
-        loadTodayRecords()
     }
 
     func loadTodayRecords() {
-        let today = Date().startOfDay
-        todayRecords = fetchTodayRecordsUseCase.execute(today: today)
+        Task {
+            let today = Date().startOfDay
+            todayRecords = await fetchTodayRecordUseCase.execute(for: today)
+        }
     }
 
     func addRecord(exerciseName: String) {
-        let record = WorkoutRecord(
-            date: Date(),
-            workoutType: selectedWorkout,
-            exerciseName: exerciseName
-        )
-        addRecordUseCase.execute(record: record)
-        loadTodayRecords()
+        Task {
+            let record = WorkoutRecord(
+                date: Date(),
+                workoutType: String(describing: selectedWorkout),
+                exerciseName: exerciseName
+            )
+            await addRecordUseCase.execute(workRecord: record)
+            loadTodayRecords()
+        }
     }
 }
