@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0318381D2D78128A0099F0D3 /* FetchWorkoutRecordUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0318381C2D78128A0099F0D3 /* FetchWorkoutRecordUseCase.swift */; };
+		0318381F2D7813060099F0D3 /* AddWorkRecordUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0318381E2D7813060099F0D3 /* AddWorkRecordUseCase.swift */; };
 		035C26E22D2E0D9600BB20B8 /* PretendardVariable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 035C26E12D2E0D9600BB20B8 /* PretendardVariable.ttf */; };
 		035C26E42D2E0DF600BB20B8 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C26E32D2E0DF500BB20B8 /* Font+Extension.swift */; };
 		035C26E72D2E107600BB20B8 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C26E62D2E107600BB20B8 /* CustomButton.swift */; };
@@ -23,8 +25,6 @@
 		03FC07B62D533C5C00EBF374 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FC07B52D533C5C00EBF374 /* DIContainer.swift */; };
 		03FC07B82D533D0D00EBF374 /* WorkoutType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FC07B72D533D0D00EBF374 /* WorkoutType.swift */; };
 		03FC07BA2D533D4300EBF374 /* WorkoutRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FC07B92D533D4300EBF374 /* WorkoutRecord.swift */; };
-		03FC07BC2D533E6600EBF374 /* FetchTodayRecordsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FC07BB2D533E6600EBF374 /* FetchTodayRecordsUseCase.swift */; };
-		03FC07BE2D533F0300EBF374 /* AddRecordUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FC07BD2D533F0300EBF374 /* AddRecordUseCase.swift */; };
 		03FC07C02D533FD200EBF374 /* WorksoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FC07BF2D533FD200EBF374 /* WorksoutViewModel.swift */; };
 		4D8D3A862D2EC5CC009D61AD /* WorksoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3A852D2EC5CC009D61AD /* WorksoutView.swift */; };
 		4D8D3A882D31520C009D61AD /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3A872D31520C009D61AD /* Workout.swift */; };
@@ -45,9 +45,6 @@
 		4D8D3ABF2D490EE1009D61AD /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3ABE2D490EE1009D61AD /* Exercise.swift */; };
 		4D8D3AC12D4913D8009D61AD /* ExerciseUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3AC02D4913D8009D61AD /* ExerciseUseCase.swift */; };
 		4D8D3AC32D4914BC009D61AD /* ExerciseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3AC22D4914BC009D61AD /* ExerciseRepository.swift */; };
-		4D8D3AD42D54E441009D61AD /* Fastfile in Resources */ = {isa = PBXBuildFile; fileRef = 4D8D3AD32D54E441009D61AD /* Fastfile */; };
-		4D8D3AD72D54E475009D61AD /* Appfile in Resources */ = {isa = PBXBuildFile; fileRef = 4D8D3AD62D54E475009D61AD /* Appfile */; };
-		4D8D3AD92D54E47D009D61AD /* Matchfile in Resources */ = {isa = PBXBuildFile; fileRef = 4D8D3AD82D54E47D009D61AD /* Matchfile */; };
 		4D8D3ADB2D579383009D61AD /* ExerciseInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3ADA2D579383009D61AD /* ExerciseInputView.swift */; };
 		4D8D3ADE2D579858009D61AD /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D3ADD2D579858009D61AD /* View+Extension.swift */; };
 		4DC95A242D2D6FAE006195E4 /* HaruFitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC95A232D2D6FAE006195E4 /* HaruFitApp.swift */; };
@@ -58,11 +55,12 @@
 		4DE755FE2D6F4A2500A9FB2E /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE755FD2D6F4A2500A9FB2E /* NoDataView.swift */; };
 		4DE756002D72833D00A9FB2E /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE755FF2D72833D00A9FB2E /* Achievement.swift */; };
 		4DE756082D7468F400A9FB2E /* AchievementUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE756072D7468F400A9FB2E /* AchievementUseCase.swift */; };
-		4DE7560A2D75D61200A9FB2E /* ExerciseMemoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE756092D75D61200A9FB2E /* ExerciseMemoryRepository.swift */; };
 		4DF724E12D5F929D00937E7E /* SingleLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF724E02D5F929D00937E7E /* SingleLineTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0318381C2D78128A0099F0D3 /* FetchWorkoutRecordUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchWorkoutRecordUseCase.swift; sourceTree = "<group>"; };
+		0318381E2D7813060099F0D3 /* AddWorkRecordUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkRecordUseCase.swift; sourceTree = "<group>"; };
 		035C26E02D2E0D1200BB20B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		035C26E12D2E0D9600BB20B8 /* PretendardVariable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PretendardVariable.ttf; sourceTree = "<group>"; };
 		035C26E32D2E0DF500BB20B8 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
@@ -82,8 +80,6 @@
 		03FC07B52D533C5C00EBF374 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		03FC07B72D533D0D00EBF374 /* WorkoutType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutType.swift; sourceTree = "<group>"; };
 		03FC07B92D533D4300EBF374 /* WorkoutRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutRecord.swift; sourceTree = "<group>"; };
-		03FC07BB2D533E6600EBF374 /* FetchTodayRecordsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTodayRecordsUseCase.swift; sourceTree = "<group>"; };
-		03FC07BD2D533F0300EBF374 /* AddRecordUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecordUseCase.swift; sourceTree = "<group>"; };
 		03FC07BF2D533FD200EBF374 /* WorksoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorksoutViewModel.swift; sourceTree = "<group>"; };
 		4D8D3A852D2EC5CC009D61AD /* WorksoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorksoutView.swift; sourceTree = "<group>"; };
 		4D8D3A872D31520C009D61AD /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
@@ -97,9 +93,6 @@
 		4D8D3ABE2D490EE1009D61AD /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		4D8D3AC02D4913D8009D61AD /* ExerciseUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseUseCase.swift; sourceTree = "<group>"; };
 		4D8D3AC22D4914BC009D61AD /* ExerciseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseRepository.swift; sourceTree = "<group>"; };
-		4D8D3AD32D54E441009D61AD /* Fastfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Fastfile; sourceTree = "<group>"; };
-		4D8D3AD62D54E475009D61AD /* Appfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Appfile; sourceTree = "<group>"; };
-		4D8D3AD82D54E47D009D61AD /* Matchfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Matchfile; sourceTree = "<group>"; };
 		4D8D3ADA2D579383009D61AD /* ExerciseInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseInputView.swift; sourceTree = "<group>"; };
 		4D8D3ADD2D579858009D61AD /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		4DC95A202D2D6FAE006195E4 /* HaruFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HaruFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,7 +104,6 @@
 		4DE755FD2D6F4A2500A9FB2E /* NoDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
 		4DE755FF2D72833D00A9FB2E /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 		4DE756072D7468F400A9FB2E /* AchievementUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementUseCase.swift; sourceTree = "<group>"; };
-		4DE756092D75D61200A9FB2E /* ExerciseMemoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseMemoryRepository.swift; sourceTree = "<group>"; };
 		4DF724E02D5F929D00937E7E /* SingleLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleLineTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -235,8 +227,8 @@
 				4D8D3AB82D428EBC009D61AD /* UserSessionUseCase.swift */,
 				4DE756072D7468F400A9FB2E /* AchievementUseCase.swift */,
 				4D8D3AC02D4913D8009D61AD /* ExerciseUseCase.swift */,
-				03FC07BB2D533E6600EBF374 /* FetchTodayRecordsUseCase.swift */,
-				03FC07BD2D533F0300EBF374 /* AddRecordUseCase.swift */,
+				0318381C2D78128A0099F0D3 /* FetchWorkoutRecordUseCase.swift */,
+				0318381E2D7813060099F0D3 /* AddWorkRecordUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -267,16 +259,6 @@
 				4D8D3ADA2D579383009D61AD /* ExerciseInputView.swift */,
 			);
 			path = Exercise;
-			sourceTree = "<group>";
-		};
-		4D8D3AD02D54E404009D61AD /* fastlane */ = {
-			isa = PBXGroup;
-			children = (
-				4D8D3AD32D54E441009D61AD /* Fastfile */,
-				4D8D3AD62D54E475009D61AD /* Appfile */,
-				4D8D3AD82D54E47D009D61AD /* Matchfile */,
-			);
-			path = fastlane;
 			sourceTree = "<group>";
 		};
 		4D8D3ADC2D57984E009D61AD /* View */ = {
@@ -313,7 +295,6 @@
 				4DC95A272D2D6FAF006195E4 /* Assets.xcassets */,
 				035C26E82D2E3E7100BB20B8 /* ColorAssets.xcassets */,
 				03FC079B2D51F8BB00EBF374 /* Configuration */,
-				4D8D3AD02D54E404009D61AD /* fastlane */,
 				4DC95A232D2D6FAE006195E4 /* HaruFitApp.swift */,
 				4DC95A392D2D787C006195E4 /* Resource */,
 				03FC07B42D533C4600EBF374 /* Dependency */,
@@ -361,7 +342,6 @@
 			isa = PBXGroup;
 			children = (
 				4D8D3A892D315460009D61AD /* WorkoutRecordRepository.swift */,
-				4DE756092D75D61200A9FB2E /* ExerciseMemoryRepository.swift */,
 				4D8D3ABA2D428FED009D61AD /* UserSessionRepository.swift */,
 				4D8D3AC22D4914BC009D61AD /* ExerciseRepository.swift */,
 			);
@@ -457,11 +437,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D8D3AD72D54E475009D61AD /* Appfile in Resources */,
-				4D8D3AD92D54E47D009D61AD /* Matchfile in Resources */,
 				035C26E22D2E0D9600BB20B8 /* PretendardVariable.ttf in Resources */,
 				035C26F52D2E5ED800BB20B8 /* .gitignore in Resources */,
-				4D8D3AD42D54E441009D61AD /* Fastfile in Resources */,
 				4DC95A342D2D711F006195E4 /* .swiftlint.yml in Resources */,
 				4DC95A2B2D2D6FAF006195E4 /* Preview Assets.xcassets in Resources */,
 				4DC95A282D2D6FAF006195E4 /* Assets.xcassets in Resources */,
@@ -526,7 +503,6 @@
 				035C26F12D2E529300BB20B8 /* RouteTabView.swift in Sources */,
 				4D8D3A882D31520C009D61AD /* Workout.swift in Sources */,
 				035C26E72D2E107600BB20B8 /* CustomButton.swift in Sources */,
-				03FC07BE2D533F0300EBF374 /* AddRecordUseCase.swift in Sources */,
 				4D8D3ABD2D451D7C009D61AD /* HeaderView.swift in Sources */,
 				4DE756002D72833D00A9FB2E /* Achievement.swift in Sources */,
 				03FC07AF2D5309D100EBF374 /* Date+Extension.swift in Sources */,
@@ -538,6 +514,7 @@
 				4D8D3AB92D428EBC009D61AD /* UserSessionUseCase.swift in Sources */,
 				4D8D3ADB2D579383009D61AD /* ExerciseInputView.swift in Sources */,
 				03FC07B82D533D0D00EBF374 /* WorkoutType.swift in Sources */,
+				0318381D2D78128A0099F0D3 /* FetchWorkoutRecordUseCase.swift in Sources */,
 				4D8D3A862D2EC5CC009D61AD /* WorksoutView.swift in Sources */,
 				4D8D3ADE2D579858009D61AD /* View+Extension.swift in Sources */,
 				035C26F32D2E54EA00BB20B8 /* TabItems.swift in Sources */,
@@ -546,14 +523,13 @@
 				4DE755FE2D6F4A2500A9FB2E /* NoDataView.swift in Sources */,
 				03FC07A62D52F9E800EBF374 /* HeaderTextView.swift in Sources */,
 				4DC95A242D2D6FAE006195E4 /* HaruFitApp.swift in Sources */,
+				0318381F2D7813060099F0D3 /* AddWorkRecordUseCase.swift in Sources */,
 				03FC07AC2D5308A500EBF374 /* HCalendarView.swift in Sources */,
 				03FC07AA2D5306A100EBF374 /* HCalendarViewModel.swift in Sources */,
 				03FC07A42D52F6DE00EBF374 /* ContentsCardView.swift in Sources */,
 				4D8D3AB32D412D99009D61AD /* BodyPart.swift in Sources */,
-				4DE7560A2D75D61200A9FB2E /* ExerciseMemoryRepository.swift in Sources */,
 				03FC07BA2D533D4300EBF374 /* WorkoutRecord.swift in Sources */,
 				035C26E42D2E0DF600BB20B8 /* Font+Extension.swift in Sources */,
-				03FC07BC2D533E6600EBF374 /* FetchTodayRecordsUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

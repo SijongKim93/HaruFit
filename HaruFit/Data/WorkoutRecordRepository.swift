@@ -1,28 +1,46 @@
-//
-//  WorkoutRepository.swift
-//  HaruFit
-//
-//  Created by 김시종 on 1/10/25.
-//
-
+import SwiftData
 import Foundation
 
 protocol WorkoutRecordRepository {
-    func getRecords(for date: Date) -> [WorkoutRecord]
-    func addRecord(_ record: WorkoutRecord)
+    func getRecords(for date: Date) async -> [WorkoutRecord]
+    func addRecord(_ record: WorkoutRecord) async
 }
 
-final class InMemoryWorkoutRepository: WorkoutRecordRepository {
-    private var records: [WorkoutRecord] = []
+@MainActor
+final class SwiftDataWorkoutRepository: WorkoutRecordRepository {
+    private let modelContainer: ModelContainer
 
-    func getRecords(for date: Date) -> [WorkoutRecord] {
+    init(modelContainer: ModelContainer) {
+        self.modelContainer = modelContainer
+    }
+
+    func getRecords(for date: Date) async -> [WorkoutRecord] {
+        let context = modelContainer.mainContext
         let startOfDay = Calendar.current.startOfDay(for: date)
-        return records.filter {
-            Calendar.current.isDate($0.date, inSameDayAs: startOfDay)
+        guard let endOfDay = Calendar.current.date(byAdding: .day, value: 1, to: startOfDay) else { return [] }
+
+        let predicate = #Predicate<WorkoutRecord> { record in
+            record.date >= startOfDay && record.date < endOfDay
+        }
+
+        let fetchDescriptor = FetchDescriptor<WorkoutRecord>(predicate: predicate)
+
+        do {
+            let records = try context.fetch(fetchDescriptor)
+            return records
+        } catch {
+            print("Error fetching records: \(error)")
+            return []
         }
     }
 
-    func addRecord(_ record: WorkoutRecord) {
-        records.append(record)
+    func addRecord(_ record: WorkoutRecord) async {
+        let context = modelContainer.mainContext
+        context.insert(record)
+        do {
+            try context.save()
+        } catch {
+            print("Error saving record: \(error)")
+        }
     }
 }
