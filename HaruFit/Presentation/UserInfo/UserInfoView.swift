@@ -46,7 +46,7 @@ struct UserInfoView: View {
                 .padding()
                 
                 NavigationLink(
-                    destination: WorksoutView(),
+                    destination: RouteTabView(),
                     isActive: $navigateToWorksout
                 ) {
                     EmptyView()

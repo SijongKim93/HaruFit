@@ -30,15 +30,24 @@ final class WorksoutViewModel: ObservableObject {
         }
     }
 
-    func addRecord(exerciseName: String) {
+    func addRecord(exerciseName: String, setCountText: String, repCountText: String) {
+        guard !exerciseName.isEmpty,
+              let setCount = Int(setCountText), setCount > 0,
+              let repCount = Int(repCountText), repCount > 0 else {
+            
+            return
+        }
+
         Task {
             let record = WorkoutRecord(
                 date: Date(),
                 workoutType: String(describing: selectedWorkout),
-                exerciseName: exerciseName
+                exerciseName: exerciseName,
+                setCount: setCount,
+                repCount: repCount
             )
             await addRecordUseCase.execute(workRecord: record)
-            loadTodayRecords()
+            loadTodayRecords()  // await 추가
         }
     }
 
