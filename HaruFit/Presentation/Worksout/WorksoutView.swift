@@ -145,16 +145,20 @@ struct WorksoutView: View {
     private var overlayExerciseInput: some View {
         Group {
             if showExerciseInput {
-                ExerciseInputView { selectedExercise in
+                ExerciseInputView { selectedExercise, setCountText, repCountText in
                     if !selectedExercise.isEmpty {
-                        viewModel.addRecord(exerciseName: selectedExercise)
+                        viewModel.addRecord(
+                            exerciseName: selectedExercise,
+                            setCountText: setCountText,
+                            repCountText: repCountText
+                        )
                     }
                     withAnimation(.easeInOut) {
                         showExerciseInput = false
                     }
                 }
                 .frame(maxWidth: .infinity)
-                .frame(height: UIScreen.main.bounds.height * 0.60)
+                .frame(height: UIScreen.main.bounds.height * 0.70)
                 .background(Color.backgroundGray)
                 .cornerRadius(20, corners: [.topLeft, .topRight])
                 .shadow(color: Color.black.opacity(0.3), radius: 10, x: 0, y: -5)
