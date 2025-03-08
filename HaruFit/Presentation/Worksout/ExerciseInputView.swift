@@ -103,7 +103,9 @@ struct ExerciseInputView: View {
                             .b1()
                             .padding()
                             .frame(maxWidth: .infinity)
-                            .background(Color.backgroundGray.opacity(0.5))
+                            .background(
+                                exerciseName == exercise ? Color.accent.opacity(0.5) : Color.backgroundGray.opacity(0.5)
+                            )
                             .cornerRadius(12)
                             .foregroundColor(.interactionDisable)
                     }
@@ -120,14 +122,20 @@ struct ExerciseInputView: View {
                 TextField("3", text: $setCount)
                     .keyboardType(.numberPad)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .frame(width: 60, height: 60)
                 Text("세트")
+                    .b1()
+                    .foregroundColor(.interactionDisable)
             }
 
             HStack(spacing: 5) {
                 TextField("12", text: $repCount)
                     .keyboardType(.numberPad)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .frame(width: 60, height: 60)
                 Text("회")
+                    .b1()
+                    .foregroundColor(.interactionDisable)
             }
         }
         .padding(.horizontal)
@@ -139,7 +147,7 @@ struct ExerciseInputView: View {
         CustomButton(
             title: "추가하기",
             size: .large,
-            backgroundColor: exerciseName != "" ? .accentColor : .interactionInactive,
+            backgroundColor: exerciseName != "" ? .accent : .interactionInactive,
             foregroundColor: .interactionDisable,
             borderColor: nil,
             action: {
