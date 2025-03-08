@@ -40,7 +40,7 @@ struct ContentsCardView: View {
                     Image(systemName: "xmark")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 20, height: 20)
+                        .frame(width: 15, height: 15)
                         .foregroundColor(.interactionInactive)
                 }
             }

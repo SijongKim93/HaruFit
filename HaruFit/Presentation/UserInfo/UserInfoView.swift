@@ -2,9 +2,7 @@ import SwiftUI
 
 struct UserInfoView: View {
     @ObservedObject var viewModel: UserInfoViewModel
-    @State private var incomingStep: UserInfoViewModel.Step? = nil
-    @State private var incomingOffset: CGFloat = UIScreen.main.bounds.width
-    @State private var navigateToWorksout: Bool = false  // 추가: WorksoutView로 이동 여부
+    @State private var navigateToWorksout: Bool = false
 
     var body: some View {
         NavigationView {
@@ -18,14 +16,12 @@ struct UserInfoView: View {
                     
                     Spacer()
                     
-                    ZStack {
-                        currentStepView
-                        if let step = incomingStep {
-                            stepView(for: step)
-                                .offset(x: incomingOffset)
-                        }
-                    }
-                    .frame(height: 300)
+                    // 단일 입력 콘텐츠 영역, 현재 단계에 따라 한 화면만 표시됨.
+                    inputContent
+                        .animation(.easeInOut(duration: 0.3), value: viewModel.currentStep)
+                        .transition(.asymmetric(insertion: .move(edge: .trailing),
+                                                 removal: .move(edge: .leading)))
+                        .frame(height: 300)
                     
                     Spacer()
                     
@@ -35,9 +31,7 @@ struct UserInfoView: View {
                         backgroundColor: viewModel.isNextEnabled ? Color.accent : Color.interactionInactive,
                         foregroundColor: .interactionDisable,
                         borderColor: nil,
-                        action: {
-                            handleNext()
-                        }
+                        action: { handleNext() }
                     )
                     .disabled(!viewModel.isNextEnabled)
                     
@@ -70,12 +64,10 @@ struct UserInfoView: View {
                 HeaderTextView(title: "설정이 완료되었습니다!", subTitle: nil)
             }
         }
-        
     }
     
-    // 현재 단계의 콘텐츠 (고정)
     @ViewBuilder
-    private var currentStepView: some View {
+    private var inputContent: some View {
         switch viewModel.currentStep {
         case .nickname:
             NicknameInputContent(viewModel: viewModel)
@@ -88,40 +80,23 @@ struct UserInfoView: View {
         }
     }
     
-    // 새로 들어올 단계의 콘텐츠 (오버레이)
-    private func stepView(for step: UserInfoViewModel.Step) -> some View {
-        switch step {
-        case .nickname: return AnyView(NicknameInputContent(viewModel: viewModel))
-        case .gender:   return AnyView(GenderInputContent(viewModel: viewModel))
-        case .age:      return AnyView(AgeInputContent(viewModel: viewModel))
-        case .complete: return AnyView(CompleteContent())
-        }
-    }
-    
     private func handleNext() {
         guard viewModel.isNextEnabled else { return }
-        
-        // 만약 이미 complete 단계라면, WorksoutView로 이동하도록 설정
         if viewModel.currentStep == .complete {
             navigateToWorksout = true
             return
         }
-        
-        let nextStep: UserInfoViewModel.Step
-        switch viewModel.currentStep {
-        case .nickname: nextStep = .gender
-        case .gender:   nextStep = .age
-        case .age:      nextStep = .complete
-        case .complete: nextStep = .complete
-        }
-        incomingStep = nextStep
-        incomingOffset = UIScreen.main.bounds.width
         withAnimation(.easeInOut(duration: 0.3)) {
-            incomingOffset = 0
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-            viewModel.currentStep = nextStep
-            incomingStep = nil
+            switch viewModel.currentStep {
+            case .nickname:
+                viewModel.currentStep = .gender
+            case .gender:
+                viewModel.currentStep = .age
+            case .age:
+                viewModel.currentStep = .complete
+            case .complete:
+                break
+            }
         }
     }
 }
@@ -130,7 +105,7 @@ struct NicknameInputContent: View {
     @ObservedObject var viewModel: UserInfoViewModel
     
     var body: some View {
-        SingleLineTextField(text: $viewModel.nickname, placeholder: "닉네임 입력 ( 2자 이상 )")
+        SingleLineTextField(text: $viewModel.nickname, placeholder: "닉네임 입력 (2자 이상)")
             .padding(.horizontal, 10)
     }
 }
@@ -192,23 +167,21 @@ struct AgeInputContent: View {
     let ageGroups = ["10대", "20대", "30대", "40대 이상"]
     
     var body: some View {
-        VStack {
-            HStack(spacing: 16) {
-                ForEach(ageGroups, id: \.self) { group in
-                    Button {
-                        viewModel.ageGroup = group
-                    } label: {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 16)
-                                .fill(viewModel.ageGroup == group ? Color.accent : Color.gray)
-                                .shadow(color: Color.black.opacity(0.3), radius: 4, x: 2, y: 2)
-                            Text(group)
-                                .foregroundColor(.white)
-                                .font(.headline)
-                        }
-                        .aspectRatio(1, contentMode: .fit)
-                        .frame(maxWidth: .infinity)
+        HStack(spacing: 16) {
+            ForEach(ageGroups, id: \.self) { group in
+                Button {
+                    viewModel.ageGroup = group
+                } label: {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 16)
+                            .fill(viewModel.ageGroup == group ? Color.accent : Color.gray)
+                            .shadow(color: Color.black.opacity(0.3), radius: 4, x: 2, y: 2)
+                        Text(group)
+                            .foregroundColor(.white)
+                            .font(.headline)
                     }
+                    .aspectRatio(1, contentMode: .fit)
+                    .frame(maxWidth: .infinity)
                 }
             }
         }

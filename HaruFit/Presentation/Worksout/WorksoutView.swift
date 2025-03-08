@@ -92,7 +92,7 @@ struct WorksoutView: View {
                     ContentsCardView(
                         icon: AppImages.WorkoutImage.weightTraining,
                         mainTitle: record.exerciseName,
-                        subTitle: record.date.formattedKoreanString,
+                        subTitle: "\(record.setCount)세트 \(record.repCount)회",
                         onButtonTap: { viewModel.deleteRecord(record: record) }
                     )
                 }
