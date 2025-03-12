@@ -5,26 +5,27 @@ struct UserInfoView: View {
     @State private var navigateToWorksout: Bool = false
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack {
-                Color.backgroundBlack.ignoresSafeArea()
-                
+                Color.backgroundBlack
+                    .ignoresSafeArea()
+
                 VStack(spacing: 20) {
                     Spacer()
-                    
+
                     headerArea
-                    
+
                     Spacer()
-                    
-                    // 단일 입력 콘텐츠 영역, 현재 단계에 따라 한 화면만 표시됨.
+
+                    // 현재 단계에 따라 단일 입력 콘텐츠 영역 표시
                     inputContent
                         .animation(.easeInOut(duration: 0.3), value: viewModel.currentStep)
                         .transition(.asymmetric(insertion: .move(edge: .trailing),
                                                  removal: .move(edge: .leading)))
                         .frame(height: 300)
-                    
+
                     Spacer()
-                    
+
                     CustomButton(
                         title: "다음",
                         size: .large,
@@ -34,23 +35,17 @@ struct UserInfoView: View {
                         action: { handleNext() }
                     )
                     .disabled(!viewModel.isNextEnabled)
-                    
+
                     Spacer()
                 }
                 .padding()
-                
-                NavigationLink(
-                    destination: RouteTabView(),
-                    isActive: $navigateToWorksout
-                ) {
-                    EmptyView()
-                }
-                .hidden()
+            }
+            .navigationDestination(isPresented: $navigateToWorksout) {
+                RouteTabView()
             }
         }
-        .navigationViewStyle(StackNavigationViewStyle())
     }
-    
+
     private var headerArea: some View {
         Group {
             switch viewModel.currentStep {
@@ -65,7 +60,7 @@ struct UserInfoView: View {
             }
         }
     }
-    
+
     @ViewBuilder
     private var inputContent: some View {
         switch viewModel.currentStep {
@@ -79,7 +74,7 @@ struct UserInfoView: View {
             CompleteContent()
         }
     }
-    
+
     private func handleNext() {
         guard viewModel.isNextEnabled else { return }
         if viewModel.currentStep == .complete {
@@ -167,7 +162,12 @@ struct AgeInputContent: View {
     let ageGroups = ["10대", "20대", "30대", "40대 이상"]
     
     var body: some View {
-        HStack(spacing: 16) {
+        let columns = [
+            GridItem(.flexible(), spacing: 16),
+            GridItem(.flexible(), spacing: 16)
+        ]
+
+        LazyVGrid(columns: columns, spacing: 16) {
             ForEach(ageGroups, id: \.self) { group in
                 Button {
                     viewModel.ageGroup = group
@@ -177,11 +177,10 @@ struct AgeInputContent: View {
                             .fill(viewModel.ageGroup == group ? Color.accent : Color.gray)
                             .shadow(color: Color.black.opacity(0.3), radius: 4, x: 2, y: 2)
                         Text(group)
-                            .foregroundColor(.white)
-                            .font(.headline)
+                            .foregroundColor(.interactionDisable)
+                            .h1()
                     }
                     .aspectRatio(1, contentMode: .fit)
-                    .frame(maxWidth: .infinity)
                 }
             }
         }
@@ -190,16 +189,13 @@ struct AgeInputContent: View {
 
 struct CompleteContent: View {
     var body: some View {
-        VStack {
-            Text("모든 설정이 완료되었습니다!")
-                .font(.title)
-                .foregroundColor(.white)
-            Text("메인 화면으로 이동하세요.")
-                .foregroundColor(.white.opacity(0.8))
-        }
+        CheckAnimationView()
     }
 }
 
 #Preview {
     UserInfoView(viewModel: DIContainer.shared.makeUserInfoViewModel())
 }
+
+
+// nextStep에 대한 저장 로직실행이 뷰에서 이뤄지지 않고있음

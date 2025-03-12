@@ -68,13 +68,4 @@ final class UserInfoViewModel: ObservableObject {
             return true
         }
     }
-    
-    var progress: Double {
-        switch currentStep {
-        case .nickname: return 1.0 / 3.0
-        case .gender:   return 2.0 / 3.0
-        case .age:      return 1.0
-        case .complete: return 1.0
-        }
-    }
 }
