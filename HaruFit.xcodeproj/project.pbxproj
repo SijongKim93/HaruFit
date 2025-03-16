@@ -102,6 +102,7 @@
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		03A57A302D817600002D93B0 /* Lottie */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Lottie; sourceTree = "<group>"; };
+		4DE757382D86E8F100A9FB2E /* UIApplication+Extension */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "UIApplication+Extension"; sourceTree = "<group>"; };
 		4DF724D22D5F8C1000937E7E /* UserInfo */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = UserInfo; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
@@ -373,6 +374,7 @@
 		4DC95A392D2D787C006195E4 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				4DE757382D86E8F100A9FB2E /* UIApplication+Extension */,
 				03A57A302D817600002D93B0 /* Lottie */,
 				4D8D3ADC2D57984E009D61AD /* View */,
 				03FC07AD2D5309C500EBF374 /* Date */,
@@ -422,6 +424,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				03A57A302D817600002D93B0 /* Lottie */,
+				4DE757382D86E8F100A9FB2E /* UIApplication+Extension */,
 				4DF724D22D5F8C1000937E7E /* UserInfo */,
 			);
 			name = HaruFit;
