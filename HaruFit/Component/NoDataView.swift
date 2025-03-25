@@ -31,7 +31,7 @@ struct NoDataView: View {
             }
         }
         .frame(maxWidth: .infinity)
-        .frame(height: 200)
+        .frame(height: 300)
     }
 }
 
