@@ -51,7 +51,7 @@ struct ContentsCardView: View {
 
 #Preview {
     ContentsCardView(
-        icon: AppImages.WorkoutImage.weightTraining,
+        icon: AppImage.WorkoutImage.weightTraining,
         mainTitle: "벤치프레스",
         subTitle: "3세트 12회",
         onButtonTap: { print("Custom button action") }

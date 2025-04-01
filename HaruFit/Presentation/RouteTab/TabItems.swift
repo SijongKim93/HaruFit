@@ -24,22 +24,22 @@ enum Tab: CaseIterable {
     var seletedImage: String {
         switch self {
         case .workout:
-            return AppImages.TabBar.workouton
+            return AppImage.TabBar.workouton
         case .collect:
-            return AppImages.TabBar.collecton
+            return AppImage.TabBar.collecton
         case .record:
-            return AppImages.TabBar.recordon
+            return AppImage.TabBar.recordon
         }
     }
 
     var unselectedImage: String {
         switch self {
         case .workout:
-            return AppImages.TabBar.workoutoff
+            return AppImage.TabBar.workoutoff
         case .collect:
-            return AppImages.TabBar.collectoff
+            return AppImage.TabBar.collectoff
         case .record:
-            return AppImages.TabBar.recordoff
+            return AppImage.TabBar.recordoff
         }
     }
 }

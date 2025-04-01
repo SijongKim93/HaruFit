@@ -7,14 +7,15 @@
 
 import SwiftUI
 import SwiftData
+import UserSession
+import Worksout
 
-@MainActor
 final class DIContainer {
     static let shared = DIContainer()
 
     lazy var modelContainer: ModelContainer = {
         do {
-            return try ModelContainer(for: WorkoutRecord.self)
+            return try ModelContainer(for: WorksoutRecord.self)
         } catch {
             fatalError("Could not create ModelContainer")
         }
@@ -39,7 +40,7 @@ final class DIContainer {
     }()
 
     lazy var addWorkoutRecordUseCase: AddWorkRecordUseCase = {
-        DefaultAddWorkRecordUseCase(repsoitory: workoutRecordRepository)
+        DefaultAddWorkRecordUseCase(repository: workoutRecordRepository)
     }()
 
     lazy var deleteWorkoutRecordUseCase: DeleteWorkoutRecordUseCase = {
@@ -47,10 +48,11 @@ final class DIContainer {
     }()
 
     // MARK: - View Model
-    func makeUserInfoViewModel() -> UserInfoViewModel {
-        UserInfoViewModel(userSessionUseCase: userSessionUseCase)
+    func makeUserInfoViewModel() -> UserSessionViewModel {
+        UserSessionViewModel(userSessionUseCase: userSessionUseCase)
     }
 
+    @MainActor
     func makeWorksoutViewModel() -> WorksoutViewModel {
         WorksoutViewModel(
             fetchTodayRecordUseCase: fetchWorkoutRecordsUseCase,

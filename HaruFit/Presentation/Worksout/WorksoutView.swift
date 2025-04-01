@@ -1,4 +1,5 @@
 import SwiftUI
+import Worksout
 
 struct WorksoutView: View {
     @StateObject private var viewModel: WorksoutViewModel = DIContainer.shared.makeWorksoutViewModel()
@@ -90,7 +91,7 @@ struct WorksoutView: View {
             } else {
                 ForEach(viewModel.todayRecords) { record in
                     ContentsCardView(
-                        icon: AppImages.WorkoutImage.weightTraining,
+                        icon: AppImage.WorkoutImage.weightTraining,
                         mainTitle: record.exerciseName,
                         subTitle: "\(record.setCount)세트 \(record.repCount)회",
                         onButtonTap: { viewModel.deleteRecord(record: record) }
@@ -101,13 +102,13 @@ struct WorksoutView: View {
     }
 
     // MARK: - Workout Button
-    private func workoutButton(title: String, type: WorkoutType) -> some View {
+    private func workoutButton(title: String, type: WorksoutType) -> some View {
         Button {
             viewModel.selectedWorkout = type
         } label: {
             VStack(spacing: 20) {
-                Image(type == .weightTraining ? AppImages.WorkoutImage.weightTraining :
-                        AppImages.WorkoutImage.running)
+                Image(type == .weightTraining ? AppImage.WorkoutImage.weightTraining :
+                        AppImage.WorkoutImage.running)
                     .resizable()
                     .scaledToFit()
                     .frame(height: 60)

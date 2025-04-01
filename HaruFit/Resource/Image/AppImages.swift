@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum AppImages {
+enum AppImage {
     enum TabBar {
         static let timeoff = "time"
         static let timeon = "time.fill"
@@ -24,5 +24,10 @@ enum AppImages {
         static let weightTraining = "dumbell"
         static let tabata = "tabata"
         static let yoga = "yoga"
+    }
+
+    enum GenderImage {
+        static let male = "male"
+        static let female = "female"
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Worksout
 
 struct ExerciseInputView: View {
     var onSelectExercise: (String, String, String) -> Void

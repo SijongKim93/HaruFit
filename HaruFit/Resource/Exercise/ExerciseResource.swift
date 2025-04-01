@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import Worksout
 
 struct ExerciseResource {
     static let exerciseDictionary: [BodyPart: [String]] = [

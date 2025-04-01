@@ -6,15 +6,21 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct HaruFitApp: App {
     private let container = DIContainer()
 
+    @State private var isActive = false
+
     var body: some Scene {
         WindowGroup {
-            UserInfoView(viewModel: container.makeUserInfoViewModel())
-                .modelContainer(container.modelContainer)
+            if container.userSessionRepository.fetchIsLoggedIn() {
+                RouteTabView()
+            } else {
+                UserSessionView(viewModel: container.makeUserInfoViewModel())
+            }
         }
     }
 }

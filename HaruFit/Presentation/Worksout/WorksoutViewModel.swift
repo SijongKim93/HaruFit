@@ -7,11 +7,12 @@
 
 import SwiftUI
 import SwiftData
+import Worksout
 
 @MainActor
 final class WorksoutViewModel: ObservableObject {
-    @Published var todayRecords: [WorkoutRecord] = []
-    @Published var selectedWorkout: WorkoutType = .weightTraining
+    @Published var todayRecords: [WorksoutRecord] = []
+    @Published var selectedWorkout: WorksoutType = .weightTraining
 
     private let fetchTodayRecordUseCase: FetchWorkoutRecordUseCase
     private let addRecordUseCase: AddWorkRecordUseCase
@@ -39,21 +40,21 @@ final class WorksoutViewModel: ObservableObject {
         }
 
         Task {
-            let record = WorkoutRecord(
+            let record = WorksoutRecord(
                 date: Date(),
                 workoutType: String(describing: selectedWorkout),
                 exerciseName: exerciseName,
                 setCount: setCount,
                 repCount: repCount
             )
-            await addRecordUseCase.execute(workRecord: record)
+            await addRecordUseCase.execute(worksRecord: record)
             loadTodayRecords()  // await 추가
         }
     }
 
-    func deleteRecord(record: WorkoutRecord) {
+    func deleteRecord(record: WorksoutRecord) {
         Task {
-            await deleteRecordUseCase.execute(workRecord: record)
+            await deleteRecordUseCase.execute(worksRecord: record)
             loadTodayRecords()
         }
     }
